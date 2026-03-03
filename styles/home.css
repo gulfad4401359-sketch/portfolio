@@ -1,0 +1,241 @@
+/* ═══════════════════════════════════════════════════════════════
+   ANTIGRAVITY — Home Page CSS
+   Source: PRD §5.1.4, Design Doc §7.1
+   Styles for sections below the scroll story and the footer
+═══════════════════════════════════════════════════════════════ */
+
+/* ── 1. Teaser Section — Bridges to other pages ──────────────── */
+.teasers {
+    padding: var(--space-24) 0 var(--space-16);
+}
+
+.teaser-block {
+    margin-bottom: var(--space-16);
+}
+
+.teaser-block__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: var(--space-8);
+}
+
+.teaser-block__title {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    color: var(--color-text);
+}
+
+.teaser-block__link {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--color-accent);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    transition: gap var(--duration-fast) ease;
+}
+
+.teaser-block__link:hover {
+    gap: var(--space-3);
+}
+
+/* ── 2. Project Teasers — 3 cards in a row ───────────────────── */
+.teaser-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-8);
+}
+
+.teaser-card {
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    background: var(--color-bg-card);
+    box-shadow: var(--shadow-card);
+    text-decoration: none;
+    color: inherit;
+    transition: transform var(--duration-normal) var(--ease-out-expo),
+        box-shadow var(--duration-normal) ease;
+}
+
+.teaser-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-card-hover);
+}
+
+.teaser-card__image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.teaser-card__body {
+    padding: var(--space-6);
+}
+
+.teaser-card__number {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: var(--space-2);
+}
+
+.teaser-card__title {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 0 0 var(--space-2) 0;
+    line-height: 1.25;
+}
+
+.teaser-card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+/* ── 3. Experience Teaser — Single card, wider ───────────────── */
+.teaser-experience {
+    max-width: 600px;
+}
+
+.teaser-experience .teaser-card__image {
+    height: 240px;
+}
+
+/* ── 4. Footer ───────────────────────────────────────────────── */
+/* PRD §6.3, Design Doc §6.7 */
+.footer {
+    background: var(--color-primary);
+    color: rgba(255, 255, 255, 0.85);
+    padding: var(--space-16) 0 var(--space-8);
+}
+
+.footer .container {
+    text-align: center;
+}
+
+.footer__name {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: var(--space-2);
+}
+
+.footer__diamond {
+    color: var(--color-accent);
+    margin: 0 var(--space-2);
+}
+
+.footer__tagline {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: var(--space-8);
+}
+
+.footer__socials {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-6);
+    margin-bottom: var(--space-8);
+}
+
+.footer__social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: border-color var(--duration-fast) ease,
+        color var(--duration-fast) ease,
+        background var(--duration-fast) ease;
+}
+
+.footer__social-link:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    background: rgba(232, 115, 90, 0.08);
+}
+
+.footer__social-link svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+}
+
+.footer__copyright {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: rgba(255, 255, 255, 0.4);
+    padding-top: var(--space-8);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer__credit {
+    color: rgba(255, 255, 255, 0.3);
+    margin-top: var(--space-2);
+    font-family: var(--font-mono);
+    font-size: 11px;
+}
+
+.footer__credit-accent {
+    color: var(--color-accent);
+}
+
+/* ── 5. Scroll Progress Bar ──────────────────────────────────── */
+.scroll-progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 0;
+    background: var(--color-accent);
+    z-index: 9999;
+    transition: none;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════════════════════ */
+
+@media (max-width: 1023px) {
+    .teaser-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 639px) {
+    .teasers {
+        padding: var(--space-16) 0 var(--space-8);
+    }
+
+    .teaser-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+    }
+
+    .teaser-experience {
+        max-width: 100%;
+    }
+
+    .teaser-block__header {
+        flex-direction: column;
+        gap: var(--space-2);
+    }
+
+    .footer {
+        padding: var(--space-12) 0 var(--space-6);
+    }
+}

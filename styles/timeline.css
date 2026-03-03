@@ -1,0 +1,215 @@
+/* ═══════════════════════════════════════════════════════════════
+   ANTIGRAVITY — Timeline Component CSS
+   Source: PRD §5.2.2, Design Doc §6.6
+   Thanh Tran portfolio inspired: vertical center line, dots,
+   alternating left/right card placement
+═══════════════════════════════════════════════════════════════ */
+
+/* ── 1. Timeline Container ───────────────────────────────────── */
+.timeline {
+    position: relative;
+    padding: var(--space-8) 0 var(--space-16);
+}
+
+/* ── 2. Center Vertical Line ─────────────────────────────────── */
+/* PRD: width 2px, gradient transparent→line→transparent */
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom,
+            transparent,
+            var(--color-timeline-line, rgba(74, 0, 106, 0.15)) 8%,
+            var(--color-timeline-line, rgba(74, 0, 106, 0.15)) 92%,
+            transparent);
+    /* Animate in: grow from 0 to full on page load */
+    animation: timelineGrow 1.2s ease-out both;
+}
+
+@keyframes timelineGrow {
+    from {
+        transform: translateX(-50%) scaleY(0);
+        transform-origin: top;
+    }
+
+    to {
+        transform: translateX(-50%) scaleY(1);
+        transform-origin: top;
+    }
+}
+
+/* ── 3. Timeline Entry (one card + dot + connector) ──────────── */
+.timeline-entry {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: var(--space-12);
+    width: 100%;
+}
+
+/* Odd entries: card LEFT of line */
+.timeline-entry:nth-child(odd) {
+    justify-content: flex-start;
+    padding-right: calc(50% + 40px);
+}
+
+/* Even entries: card RIGHT of line */
+.timeline-entry:nth-child(even) {
+    justify-content: flex-end;
+    padding-left: calc(50% + 40px);
+}
+
+/* ── 4. Timeline Dot — On the center line ────────────────────── */
+/* PRD: 12px circle, accent glow, on center line */
+.timeline-entry::before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--color-timeline-dot, var(--color-accent));
+    box-shadow: 0 0 12px var(--color-accent-glow, rgba(232, 115, 90, 0.4));
+    z-index: 2;
+}
+
+/* ── 5. Connector Line — Bridges dot to card edge ────────────── */
+/* PRD: 40px horizontal connector */
+.timeline-entry::after {
+    content: '';
+    position: absolute;
+    top: 45px;
+    width: 40px;
+    height: 2px;
+    background: var(--color-timeline-line, rgba(74, 0, 106, 0.15));
+    z-index: 1;
+}
+
+/* Odd: connector goes LEFT from center dot to card */
+.timeline-entry:nth-child(odd)::after {
+    left: 50%;
+    transform: translateX(-100%);
+    margin-left: -6px;
+}
+
+/* Even: connector goes RIGHT from center dot to card */
+.timeline-entry:nth-child(even)::after {
+    left: 50%;
+    margin-left: 6px;
+}
+
+/* ── 6. Entrance Animations — IntersectionObserver controlled ── */
+/* PRD: opacity 0 + translateX(±60px) → visible + translateX(0) */
+.timeline-entry .card-container {
+    opacity: 0;
+    transition: opacity 600ms var(--ease-out-expo, cubic-bezier(0.16, 1, 0.3, 1)),
+        transform 600ms var(--ease-out-expo, cubic-bezier(0.16, 1, 0.3, 1));
+}
+
+/* Left cards translate from -60px */
+.timeline-entry:nth-child(odd) .card-container {
+    transform: translateX(-60px);
+}
+
+/* Right cards translate from +60px */
+.timeline-entry:nth-child(even) .card-container {
+    transform: translateX(60px);
+}
+
+/* When in view (JS adds this class) */
+.timeline-entry.is-visible .card-container {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ── 7. Card Sizing for Timeline ─────────────────────────────── */
+.timeline-entry .card-container {
+    width: 100%;
+    max-width: 380px;
+}
+
+.timeline-entry .card-container .card {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 300 / 380;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE — Mobile: timeline collapses to left-aligned
+═══════════════════════════════════════════════════════════════ */
+
+@media (max-width: 767px) {
+
+    /* Move timeline line to the left */
+    .timeline::before {
+        left: 20px;
+        transform: none;
+    }
+
+    /* All entries stack left-aligned */
+    .timeline-entry:nth-child(odd),
+    .timeline-entry:nth-child(even) {
+        padding-right: 0;
+        padding-left: 52px;
+        justify-content: flex-start;
+    }
+
+    /* Dot: move to left edge */
+    .timeline-entry::before {
+        left: 20px;
+        transform: translateX(-50%);
+    }
+
+    /* Connector: always from left dot */
+    .timeline-entry:nth-child(odd)::after,
+    .timeline-entry:nth-child(even)::after {
+        left: 26px;
+        transform: none;
+        margin-left: 0;
+        width: 20px;
+    }
+
+    /* All cards enter from left on mobile */
+    .timeline-entry:nth-child(odd) .card-container,
+    .timeline-entry:nth-child(even) .card-container {
+        transform: translateX(-40px);
+    }
+
+    .timeline-entry.is-visible .card-container {
+        transform: translateX(0);
+    }
+
+    /* Full-width cards on mobile */
+    .timeline-entry .card-container {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 479px) {
+    .timeline::before {
+        left: 14px;
+    }
+
+    .timeline-entry:nth-child(odd),
+    .timeline-entry:nth-child(even) {
+        padding-left: 40px;
+    }
+
+    .timeline-entry::before {
+        left: 14px;
+        width: 10px;
+        height: 10px;
+    }
+
+    .timeline-entry:nth-child(odd)::after,
+    .timeline-entry:nth-child(even)::after {
+        left: 20px;
+        width: 14px;
+    }
+}

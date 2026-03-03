@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Flip Test — Antigravity Portfolio</title>
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/card.css">
+</head>
+
+<body>
+
+    <!-- ── Navbar ──────────────────────────────────────────────── -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="navbar__photo-link" aria-label="Home">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=72&h=72&fit=crop&crop=face"
+                alt="Profile" class="navbar__photo">
+        </a>
+        <div class="navbar__links">
+            <a href="index.html" class="navbar__link is-active">Home</a>
+            <a href="#" class="navbar__link">About</a>
+            <a href="#" class="navbar__link">Projects</a>
+            <a href="#" class="navbar__link">Experience</a>
+        </div>
+        <a href="#" class="navbar__cta">Contact</a>
+    </nav>
+    <div class="navbar-spacer"></div>
+
+    <!-- ── Test Content ────────────────────────────────────────── -->
+    <div class="container" style="padding-top: var(--space-8); text-align: center;">
+        <p class="section-label">CARD FLIP TEST</p>
+        <h2>Hover over any card to flip it</h2>
+        <div class="title-underline title-underline--lg" style="margin: 12px auto 40px;"></div>
+    </div>
+
+    <!-- ── Card Grid — 3 cards side by side ────────────────────── -->
+    <div class="container"
+        style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; padding-bottom: var(--space-16);">
+
+        <!-- Card 1: Project card with image front -->
+        <div class="card-container" style="height: 380px;">
+            <div class="card">
+                <div class="card-face card-front">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=500&fit=crop"
+                        alt="Project thumbnail" class="card-image">
+                    <div class="card-front-content">
+                        <div class="card-number">PROJECT 01</div>
+                        <h3 class="card-title">AI Chat Platform</h3>
+                        <p class="card-subtitle">Full-stack conversational AI</p>
+                    </div>
+                </div>
+                <div class="card-face card-back">
+                    <div class="card-number">PROJECT 01</div>
+                    <h3 class="card-title">AI Chat Platform</h3>
+                    <div class="card-tags">
+                        <span class="tag">React</span>
+                        <span class="tag">Node.js</span>
+                        <span class="tag">OpenAI</span>
+                    </div>
+                    <p class="card-summary">A real-time conversational AI platform with streaming responses, context
+                        memory, and multi-model support. Built with React frontend and Node.js backend.</p>
+                    <a href="#" class="card-detail-link">View Details →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2: Project card with pulse rings (home-hero style front) -->
+        <div class="card-container" style="height: 380px;">
+            <div class="card">
+                <div class="card-face card-front"
+                    style="background: linear-gradient(135deg, var(--color-bg) 0%, var(--color-bg-muted) 100%);">
+                    <div class="pulse-container">
+                        <div class="pulse-ring"></div>
+                        <div class="pulse-ring"></div>
+                        <div class="pulse-ring"></div>
+                        <div class="pulse-ring"></div>
+                        <div class="pulse-ring"></div>
+                    </div>
+                    <div class="card-front-content"
+                        style="background: linear-gradient(to top, rgba(74,0,106,0.75), transparent);">
+                        <div class="card-number">PROJECT 02</div>
+                        <h3 class="card-title">Design System</h3>
+                        <p class="card-subtitle">Component library</p>
+                    </div>
+                </div>
+                <div class="card-face card-back">
+                    <div class="card-number">PROJECT 02</div>
+                    <h3 class="card-title">Design System</h3>
+                    <div class="card-tags">
+                        <span class="tag">CSS</span>
+                        <span class="tag">Figma</span>
+                        <span class="tag">Storybook</span>
+                    </div>
+                    <p class="card-summary">A comprehensive design system with tokens, components, and documentation.
+                        Powers consistent UI across multiple products.</p>
+                    <a href="#" class="card-detail-link">View Details →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3: Experience card -->
+        <div class="card-container" style="height: 380px;">
+            <div class="card">
+                <div class="card-face card-front">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&h=500&fit=crop"
+                        alt="Experience thumbnail" class="card-image">
+                    <div class="card-front-content">
+                        <div class="card-number">2022 — PRESENT</div>
+                        <h3 class="card-title">Senior Developer</h3>
+                        <p class="card-subtitle">at Tech Corp</p>
+                    </div>
+                </div>
+                <div class="card-face card-back">
+                    <div class="card-number">2022 — PRESENT</div>
+                    <h3 class="card-title">Senior Developer</h3>
+                    <div class="card-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">AWS</span>
+                        <span class="tag">Docker</span>
+                    </div>
+                    <p class="card-summary">Led a team of 5 engineers to build and deploy microservices architecture
+                        serving 100K+ users. Improved CI/CD pipeline reducing deploy time by 60%.</p>
+                    <a href="#" class="card-detail-link">View Details →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/navbar.js"></script>
+    <script src="js/card-flip.js"></script>
+    <script src="js/scroll-anim.js"></script>
+</body>
+
+</html>

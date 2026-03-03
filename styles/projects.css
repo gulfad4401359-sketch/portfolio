@@ -1,0 +1,143 @@
+/* ═══════════════════════════════════════════════════════════════
+   ANTIGRAVITY — Projects Page CSS
+   Source: PRD §5.2.1, Design Doc §7.2
+   Page header, timeline adjustments, project-specific spacing
+═══════════════════════════════════════════════════════════════ */
+
+/* ── page-header styles are now centralized in global.css ─────── */
+/* (Shared by projects, experience, contact, and resume pages)   */
+
+/* ── 2. Projects-Specific Card Sizing ────────────────────────── */
+/* PRD §5.2.3: 300px × 380px desktop */
+.projects-timeline .card-container {
+    max-width: 300px;
+}
+
+.projects-timeline .card-container .card {
+    aspect-ratio: 300 / 380;
+}
+
+/* Card front face: project image fills 60% height */
+.projects-timeline .card-front .card-image {
+    height: 60%;
+}
+
+/* Card front: project info overlay */
+.projects-timeline .card-front-content {
+    padding: var(--space-4) var(--space-5);
+}
+
+.projects-timeline .project-number {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: var(--space-1);
+}
+
+.projects-timeline .project-title {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 0 0 var(--space-2) 0;
+    line-height: 1.2;
+}
+
+.projects-timeline .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+/* ── 3. Card Back Face — Project summary ─────────────────────── */
+.projects-timeline .card-back {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--space-6);
+    background: var(--color-bg-card);
+}
+
+.projects-timeline .card-back .project-number {
+    margin-bottom: var(--space-2);
+}
+
+.projects-timeline .card-back .project-title {
+    margin-bottom: var(--space-4);
+}
+
+.project-summary {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    line-height: 1.65;
+    margin-bottom: var(--space-4);
+}
+
+.project-outcomes {
+    margin-bottom: var(--space-6);
+}
+
+.project-outcomes__label {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    color: var(--color-text);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: var(--space-2);
+}
+
+.project-outcome {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    padding-left: var(--space-4);
+    position: relative;
+    margin-bottom: var(--space-1);
+}
+
+.project-outcome::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+}
+
+/* View Full Project CTA */
+.project-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    background: var(--color-accent);
+    color: #FFFFFF;
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    padding: var(--space-3) var(--space-5);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background var(--duration-fast) ease,
+        transform var(--duration-fast) ease;
+    margin-top: auto;
+}
+
+.project-cta:hover {
+    background: var(--color-accent-hover, #d4654e);
+    transform: translateY(-1px);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════════════════════ */
+/* NOTE: .page-header responsive rules live in global.css */
+
+@media (max-width: 767px) {
+    .projects-timeline .card-container {
+        max-width: 100%;
+    }
+}

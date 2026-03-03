@@ -1,0 +1,311 @@
+/* ═══════════════════════════════════════════════════════════════
+   ANTIGRAVITY — Navbar Component
+   Design Doc §6.1 — Floating Pill Navbar
+   Design Doc §13.2 — Responsive Navbar Behavior
+═══════════════════════════════════════════════════════════════ */
+
+/* ── Pill Container ──────────────────────────────────────────── */
+.navbar {
+    position: fixed;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    gap: 0;
+
+    background: var(--color-primary);
+    /* #4A006A Deep Violet */
+    border-radius: var(--radius-full);
+    /* 9999px — full pill */
+    padding: 6px 8px;
+    box-shadow: var(--shadow-pill);
+    /* --shadow-pill: 0 4px 20px rgba(74, 0, 106, 0.18),
+                    0 1px 4px rgba(74, 0, 106, 0.10) */
+}
+
+/* ── Profile Photo ───────────────────────────────────────────── */
+.navbar__photo {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    flex-shrink: 0;
+    display: block;
+}
+
+.navbar__photo-link {
+    display: flex;
+    align-items: center;
+    margin-right: 16px;
+    /* Gap between photo and links */
+    flex-shrink: 0;
+}
+
+/* ── Nav Links Container ─────────────────────────────────────── */
+.navbar__links {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    /* Padding handles spacing */
+}
+
+/* ── Individual Nav Link ─────────────────────────────────────── */
+.navbar__link {
+    font-family: var(--font-body);
+    /* DM Sans */
+    font-size: 14px;
+    /* var(--text-sm) = 0.875rem ≈ 14px */
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.80);
+    /* Inactive state */
+    padding: 6px 14px;
+    border-radius: var(--radius-full);
+    /* 9999px — pill hover zone */
+    text-decoration: none;
+    transition: color var(--duration-fast) ease,
+        background var(--duration-fast) ease;
+    white-space: nowrap;
+}
+
+/* Active nav link — brighter white, NO background, NO rose gold */
+.navbar__link.is-active {
+    color: #FFFFFF;
+    font-weight: 600;
+}
+
+/* Hover — subtle white tint pill */
+.navbar__link:hover {
+    color: #FFFFFF;
+    background: rgba(255, 255, 255, 0.10);
+}
+
+/* Focus ring on dark surface — white, not rose gold */
+.navbar__link:focus-visible {
+    outline-color: rgba(255, 255, 255, 0.90);
+}
+
+/* ── Contact Button (Rose Gold CTA) ──────────────────────────── */
+.navbar__cta {
+    margin-left: 8px;
+    /* Gap between links and CTA */
+    background: var(--color-accent);
+    /* #E8735A Rose Gold */
+    color: #FFFFFF;
+    font-family: var(--font-body);
+    /* DM Sans */
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 20px;
+    border-radius: var(--radius-full);
+    /* 9999px — pill shape */
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background var(--duration-fast) ease,
+        box-shadow var(--duration-fast) ease;
+}
+
+.navbar__cta:hover {
+    background: var(--color-accent-hover);
+    /* #D45A40 */
+    box-shadow: var(--shadow-accent);
+    /* 0 4px 20px rgba(232,115,90,0.35) */
+}
+
+.navbar__cta:active {
+    background: var(--color-accent-pressed);
+    transform: scale(0.98);
+}
+
+/* Focus ring on dark surface */
+.navbar__cta:focus-visible {
+    outline-color: rgba(255, 255, 255, 0.90);
+}
+
+/* ── Hamburger Button (mobile only) ──────────────────────────── */
+.navbar__hamburger {
+    display: none;
+    /* Hidden on desktop */
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: auto;
+}
+
+.navbar__hamburger-icon {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 20px;
+}
+
+.navbar__hamburger-icon span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.80);
+    border-radius: 2px;
+    transition: transform var(--duration-normal) ease,
+        opacity var(--duration-normal) ease;
+}
+
+/* Hamburger → X transform when menu open */
+.navbar__hamburger.is-open .navbar__hamburger-icon span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.navbar__hamburger.is-open .navbar__hamburger-icon span:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar__hamburger.is-open .navbar__hamburger-icon span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   MOBILE OVERLAY NAV — Design Doc §13.2
+   Full-screen violet overlay on mobile
+═══════════════════════════════════════════════════════════════ */
+
+.mobile-nav-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: var(--color-primary);
+    /* #4A006A Deep Violet */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-8);
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--duration-normal) ease,
+        visibility var(--duration-normal) ease;
+}
+
+.mobile-nav-overlay.is-open {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Close button — top right */
+.mobile-nav-overlay__close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.70);
+    font-family: var(--font-body);
+    font-size: 24px;
+    cursor: pointer;
+    padding: 8px;
+    line-height: 1;
+    transition: color var(--duration-fast) ease;
+}
+
+.mobile-nav-overlay__close:hover {
+    color: #FFFFFF;
+}
+
+/* Mobile nav links — large, centered, stacked */
+.mobile-nav-overlay__link {
+    font-family: var(--font-display);
+    /* Cormorant Garamond */
+    font-weight: 700;
+    font-size: clamp(2rem, 8vw, 3rem);
+    /* 48px target, responsive */
+    color: #FFFFFF;
+    text-decoration: none;
+    text-align: center;
+    transition: color var(--duration-fast) ease;
+}
+
+/* Active link in mobile overlay — rose gold */
+.mobile-nav-overlay__link.is-active {
+    color: var(--color-accent);
+    /* #E8735A */
+}
+
+.mobile-nav-overlay__link:hover {
+    color: rgba(255, 255, 255, 0.80);
+}
+
+/* Contact CTA inside mobile overlay */
+.mobile-nav-overlay__cta {
+    margin-top: var(--space-8);
+    background: var(--color-accent);
+    color: #FFFFFF;
+    font-family: var(--font-body);
+    font-size: 16px;
+    font-weight: 600;
+    padding: 14px 32px;
+    border-radius: var(--radius-full);
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background var(--duration-fast) ease;
+}
+
+.mobile-nav-overlay__cta:hover {
+    background: var(--color-accent-hover);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE BREAKPOINTS — Design Doc §13.2
+═══════════════════════════════════════════════════════════════ */
+
+/* Tablet (640–1023px) — pill shrinks, links get tighter padding */
+@media (max-width: 1023px) {
+    .navbar__link {
+        padding: 6px 10px;
+        font-size: 13px;
+    }
+
+    .navbar__cta {
+        padding: 7px 16px;
+        font-size: 13px;
+    }
+}
+
+/* Mobile (< 640px) — pill: photo + hamburger only */
+@media (max-width: 639px) {
+    .navbar {
+        padding: 6px 8px 6px 8px;
+    }
+
+    /* Hide desktop links and CTA */
+    .navbar__links,
+    .navbar__cta {
+        display: none;
+    }
+
+    /* Show hamburger */
+    .navbar__hamburger {
+        display: flex;
+    }
+
+    /* Remove the photo-to-links gap, hamburger sits right */
+    .navbar__photo-link {
+        margin-right: 0;
+    }
+}
+
+/* ── Navbar spacer — prevents content from hiding behind fixed nav ── */
+.navbar-spacer {
+    height: 72px;
+    /* Navbar height + top offset + buffer */
+}

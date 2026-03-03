@@ -1,0 +1,356 @@
+/* ═══════════════════════════════════════════════════════════════
+   ANTIGRAVITY — Hero Section CSS
+   Source: PRD §5.1.2–5.1.3, Design Doc §7.1
+   Implements the scroll-story layout from move_and_flip.html
+═══════════════════════════════════════════════════════════════ */
+
+/* ── 1. Scroll Story Wrapper — Total scroll height ───────────── */
+.scroll-story {
+    position: relative;
+    height: 400vh;
+    /* 4 screen heights of scroll */
+    width: 100%;
+}
+
+/* ── 2. Sticky Viewport — Locks visible area ─────────────────── */
+/* Identical pattern to move_and_flip.html's .sticky-viewport */
+.sticky-viewport {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* ── 3. Text Sections — Fade & Translate per phase ───────────── */
+.hero-text-section {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    padding: 0 5vw;
+    box-sizing: border-box;
+    will-change: opacity, transform;
+    pointer-events: none;
+}
+
+/* ── 4. Hero Text (Phase 0) — Split Name/Designation ─────────── */
+/* Portavia-inspired: name LEFT, designation RIGHT, card in center */
+.hero-text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3vw;
+}
+
+.hero-text__left,
+.hero-text__right {
+    max-width: 35%;
+    pointer-events: auto;
+}
+
+.hero-text__greeting {
+    font-family: var(--font-body);
+    font-size: var(--text-lg);
+    font-weight: 400;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: var(--space-2);
+    display: block;
+}
+
+.hero-text__name {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 6vw, 6rem);
+    font-weight: 700;
+    color: var(--color-text);
+    text-transform: uppercase;
+    line-height: 0.95;
+    margin: 0;
+}
+
+.hero-text__designation {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 5vw, 5rem);
+    font-weight: 700;
+    color: var(--color-text);
+    text-transform: uppercase;
+    line-height: 0.95;
+    text-align: right;
+    margin: 0;
+}
+
+.hero-text__tagline {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    margin-top: var(--space-4);
+    max-width: 280px;
+    line-height: 1.6;
+}
+
+/* ── 5. Skills Block (Phase 1) — LEFT side ───────────────────── */
+.skills-text {
+    width: 50vw;
+    left: 0;
+    text-align: left;
+    opacity: 0;
+    /* Hidden by default, JS controls */
+    padding-left: 5vw;
+    pointer-events: auto;
+}
+
+.skills-text .section-label {
+    margin-bottom: var(--space-4);
+}
+
+.skills-category {
+    margin-bottom: var(--space-6);
+}
+
+.skills-category__title {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: var(--space-3);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.skills-category__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+/* ── 6. About Block (Phase 2) — LEFT side ────────────────────── */
+.about-text {
+    width: 55vw;
+    left: 0;
+    text-align: left;
+    opacity: 0;
+    /* Hidden by default, JS controls */
+    padding-left: 5vw;
+    pointer-events: auto;
+}
+
+.about-text .section-label {
+    margin-bottom: var(--space-4);
+}
+
+.about-text__bio {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    color: var(--color-text);
+    line-height: 1.75;
+    max-width: 480px;
+    margin-bottom: var(--space-8);
+}
+
+/* Stat counters row */
+.stat-row {
+    display: flex;
+    gap: var(--space-6);
+    margin-bottom: var(--space-8);
+}
+
+.stat-card {
+    background: var(--color-bg-card);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6) var(--space-6);
+    box-shadow: var(--shadow-card);
+    text-align: center;
+    min-width: 120px;
+}
+
+.stat-card__number {
+    font-family: var(--font-display);
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    color: var(--color-text);
+    line-height: 1;
+    margin-bottom: var(--space-1);
+}
+
+.stat-card__label {
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+/* About CTA links */
+.about-ctas {
+    display: flex;
+    gap: var(--space-4);
+}
+
+/* ── 7. Resume CTA (end of Phase 2) ─────────────────────────── */
+.resume-cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(90%, 640px);
+    opacity: 0;
+    /* Hidden by default, JS controls */
+    text-align: center;
+    pointer-events: auto;
+}
+
+.resume-portal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-16) var(--space-8);
+    background: rgba(255, 244, 240, 0.6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(74, 0, 106, 0.12);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-card);
+    text-decoration: none;
+    transition: border-color var(--duration-normal) ease,
+        box-shadow var(--duration-normal) ease;
+    cursor: pointer;
+}
+
+.resume-portal:hover {
+    border-color: var(--color-accent);
+    box-shadow: var(--shadow-card), 0 0 30px rgba(232, 115, 90, 0.15);
+}
+
+.resume-portal__icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: var(--space-6);
+    color: var(--color-text);
+    opacity: 0.7;
+    transition: color var(--duration-normal) ease,
+        opacity var(--duration-normal) ease;
+}
+
+.resume-portal:hover .resume-portal__icon {
+    color: var(--color-accent);
+    opacity: 1;
+}
+
+.resume-portal__label {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    color: var(--color-text);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    transition: color var(--duration-normal) ease;
+}
+
+.resume-portal:hover .resume-portal__label {
+    color: var(--color-accent);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════════════════════ */
+
+@media (max-width: 1023px) {
+    .hero-text__name {
+        font-size: clamp(2.5rem, 5vw, 4.5rem);
+    }
+
+    .hero-text__designation {
+        font-size: clamp(2rem, 4vw, 3.5rem);
+    }
+
+    .stat-row {
+        gap: var(--space-4);
+    }
+
+    .stat-card {
+        padding: var(--space-4);
+        min-width: 100px;
+    }
+}
+
+@media (max-width: 767px) {
+
+    /* On mobile, scroll story is disabled — show static layout instead */
+    .scroll-story {
+        height: auto;
+    }
+
+    .sticky-viewport {
+        position: relative;
+        height: auto;
+        overflow: visible;
+    }
+
+    .hero-text-section {
+        position: relative;
+        top: auto;
+        transform: none;
+        padding: var(--space-16) 5vw var(--space-8);
+    }
+
+    .hero-text {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--space-8);
+    }
+
+    .hero-text__left,
+    .hero-text__right {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .hero-text__designation {
+        text-align: center;
+    }
+
+    .hero-text__tagline {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .skills-text,
+    .about-text {
+        position: relative;
+        top: auto;
+        transform: none;
+        width: 100%;
+        opacity: 1 !important;
+        padding: var(--space-8) 5vw;
+    }
+
+    .stat-row {
+        flex-direction: column;
+        gap: var(--space-4);
+        align-items: center;
+    }
+
+    .stat-card {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .about-ctas {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .resume-cta {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        width: 100%;
+        opacity: 1 !important;
+        padding: var(--space-8) 5vw;
+    }
+}

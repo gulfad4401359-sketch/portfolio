@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar Test — Antigravity Portfolio</title>
+  <link rel="stylesheet" href="styles/global.css">
+  <link rel="stylesheet" href="styles/navbar.css">
+</head>
+<body>
+
+  <!-- ── Navbar ──────────────────────────────────────────────── -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <!-- Profile Photo -->
+    <a href="index.html" class="navbar__photo-link" aria-label="Home">
+      <img
+        src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=72&h=72&fit=crop&crop=face"
+        alt="[OWNER_NAME] profile photo"
+        class="navbar__photo"
+      >
+    </a>
+
+    <!-- Desktop Nav Links -->
+    <div class="navbar__links">
+      <a href="index.html" class="navbar__link is-active">Home</a>
+      <a href="#about" class="navbar__link">About</a>
+      <a href="projects.html" class="navbar__link">Projects</a>
+      <a href="experience.html" class="navbar__link">Experience</a>
+    </div>
+
+    <!-- Contact CTA Button -->
+    <a href="contact.html" class="navbar__cta">Contact</a>
+
+    <!-- Hamburger (mobile only) -->
+    <button class="navbar__hamburger" aria-label="Open navigation menu" aria-expanded="false">
+      <div class="navbar__hamburger-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </button>
+  </nav>
+
+  <!-- ── Mobile Overlay Nav ──────────────────────────────────── -->
+  <div class="mobile-nav-overlay" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <button class="mobile-nav-overlay__close" aria-label="Close navigation menu">✕</button>
+    <a href="index.html" class="mobile-nav-overlay__link is-active">Home</a>
+    <a href="#about" class="mobile-nav-overlay__link">About</a>
+    <a href="projects.html" class="mobile-nav-overlay__link">Projects</a>
+    <a href="experience.html" class="mobile-nav-overlay__link">Experience</a>
+    <a href="contact.html" class="mobile-nav-overlay__cta">Contact</a>
+  </div>
+
+  <!-- Spacer so content doesn't hide behind fixed nav -->
+  <div class="navbar-spacer"></div>
+
+  <!-- ── Test Content ────────────────────────────────────────── -->
+  <div class="container" style="padding-top: var(--space-16); text-align: center;">
+    <p class="section-label">NAVBAR TEST</p>
+    <h1 style="font-size: var(--text-hero); text-transform: uppercase;">
+      HELLO, I'M<br>[OWNER_NAME]
+    </h1>
+    <div class="title-underline title-underline--lg" style="margin: 20px auto 32px;"></div>
+    <p style="font-size: var(--text-lg); color: var(--color-text-muted); max-width: 480px; margin: 0 auto;">
+      This is a test page to verify the floating pill navbar renders correctly against the Blush White (#FFF4F0) background.
+    </p>
+
+    <!-- Stat counters preview -->
+    <div style="display: flex; justify-content: center; gap: var(--space-8); margin-top: var(--space-16);">
+      <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 20px 24px; min-width: 110px; text-align: center; box-shadow: var(--shadow-sm);">
+        <div style="font-family: var(--font-display); font-weight: 700; font-size: 40px; color: var(--color-text);">3+</div>
+        <div style="width: 32px; height: 1px; background: rgba(232,115,90,0.30); margin: 8px auto;"></div>
+        <div style="font-family: var(--font-body); font-weight: 500; font-size: 13px; color: var(--color-text-muted);">Years Exp</div>
+      </div>
+      <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 20px 24px; min-width: 110px; text-align: center; box-shadow: var(--shadow-sm);">
+        <div style="font-family: var(--font-display); font-weight: 700; font-size: 40px; color: var(--color-text);">8</div>
+        <div style="width: 32px; height: 1px; background: rgba(232,115,90,0.30); margin: 8px auto;"></div>
+        <div style="font-family: var(--font-body); font-weight: 500; font-size: 13px; color: var(--color-text-muted);">Projects</div>
+      </div>
+      <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 20px 24px; min-width: 110px; text-align: center; box-shadow: var(--shadow-sm);">
+        <div style="font-family: var(--font-display); font-weight: 700; font-size: 40px; color: var(--color-text);">12+</div>
+        <div style="width: 32px; height: 1px; background: rgba(232,115,90,0.30); margin: 8px auto;"></div>
+        <div style="font-family: var(--font-body); font-weight: 500; font-size: 13px; color: var(--color-text-muted);">Technologies</div>
+      </div>
+    </div>
+
+    <!-- Buttons preview -->
+    <div style="margin-top: var(--space-12); display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap;">
+      <button class="btn-primary">View Projects →</button>
+      <button class="btn-ghost">Download Resume</button>
+    </div>
+
+    <!-- Tags preview -->
+    <div style="margin-top: var(--space-8); display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;">
+      <span class="tag">React</span>
+      <span class="tag">Next.js</span>
+      <span class="tag">Python</span>
+      <span class="tag">Node.js</span>
+      <span class="tag">Docker</span>
+    </div>
+
+    <!-- Available badge -->
+    <div style="margin-top: var(--space-8); display: flex; justify-content: center;">
+      <span class="badge-available">Available for work</span>
+    </div>
+  </div>
+
+  <script src="js/navbar.js"></script>
+</body>
+</html>

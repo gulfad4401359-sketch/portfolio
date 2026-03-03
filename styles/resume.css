@@ -1,0 +1,333 @@
+/* ═══════════════════════════════════════════════════════════════
+   ANTIGRAVITY — Resume Page CSS
+   Source: PRD §5.7, Design Doc §7.6
+   Paper card layout, download button, resume typography
+═══════════════════════════════════════════════════════════════ */
+
+/* ── 0. Page Header (also in global.css — explicit for cache reliability) */
+.page-header {
+    padding: var(--space-24) 0 var(--space-16);
+    text-align: left;
+}
+
+.page-header__title {
+    font-family: var(--font-display);
+    font-size: var(--text-hero);
+    font-weight: 700;
+    color: var(--color-text);
+    text-transform: uppercase;
+    line-height: 0.95;
+    margin: 0 0 var(--space-4) 0;
+}
+
+.page-header__subtitle {
+    font-family: var(--font-body);
+    font-size: var(--text-lg);
+    font-weight: 400;
+    color: var(--color-text-muted);
+    max-width: 480px;
+    line-height: 1.6;
+}
+
+.page-header__line {
+    width: 80px;
+    height: 3px;
+    background: var(--color-accent);
+    border-radius: 2px;
+    margin: var(--space-6) 0;
+}
+
+@media (max-width: 1023px) {
+    .page-header__title { font-size: var(--text-3xl); }
+}
+
+@media (max-width: 767px) {
+    .page-header { padding: var(--space-16) 0 var(--space-8); text-align: center; }
+    .page-header__subtitle { margin-left: auto; margin-right: auto; }
+    .page-header__line { margin-left: auto; margin-right: auto; }
+}
+
+
+/* ── 1. Resume Actions Bar ──────────────────────────────────── */
+.resume-actions {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-4);
+    padding: var(--space-8) 0;
+}
+
+.resume-download {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-3);
+    background: var(--color-accent);
+    color: #FFFFFF;
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    padding: var(--space-3) var(--space-6);
+    border: none;
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    cursor: pointer;
+    transition: background var(--duration-fast) ease,
+        transform var(--duration-fast) ease;
+}
+
+.resume-download:hover {
+    background: var(--color-accent-hover, #d4654e);
+    transform: translateY(-1px);
+}
+
+.resume-download svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+}
+
+.resume-print {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-3);
+    background: transparent;
+    color: var(--color-primary);
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    padding: var(--space-3) var(--space-6);
+    border: 1.5px solid rgba(74, 0, 106, 0.2);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    cursor: pointer;
+    transition: all var(--duration-fast) ease;
+}
+
+.resume-print:hover {
+    border-color: var(--color-primary);
+    background: rgba(74, 0, 106, 0.04);
+}
+
+.resume-print svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+}
+
+/* ── 2. Paper Card Container ────────────────────────────────── */
+.resume-paper {
+    max-width: 800px;
+    margin: 0 auto var(--space-16);
+    background: #FFFFFF;
+    border-radius: var(--radius-xl);
+    box-shadow: 0 4px 24px rgba(74, 0, 106, 0.06),
+        0 1px 3px rgba(74, 0, 106, 0.04);
+    padding: var(--space-12) var(--space-12);
+    position: relative;
+}
+
+/* Top accent line */
+.resume-paper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: var(--space-8);
+    right: var(--space-8);
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+    border-radius: 0 0 3px 3px;
+}
+
+/* ── 3. Resume Header ──────────────────────────────────────── */
+.resume-header {
+    text-align: center;
+    padding-bottom: var(--space-8);
+    border-bottom: 1px solid rgba(74, 0, 106, 0.06);
+    margin-bottom: var(--space-8);
+}
+
+.resume-header__name {
+    font-family: var(--font-display);
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 0 0 var(--space-2) 0;
+}
+
+.resume-header__title {
+    font-family: var(--font-body);
+    font-size: var(--text-lg);
+    color: var(--color-primary);
+    font-weight: 400;
+    margin-bottom: var(--space-4);
+}
+
+.resume-header__contact {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+}
+
+.resume-header__contact-item {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+}
+
+.resume-header__contact-item a {
+    color: var(--color-accent);
+    text-decoration: none;
+}
+
+.resume-header__contact-item a:hover {
+    text-decoration: underline;
+}
+
+/* ── 4. Resume Sections ────────────────────────────────────── */
+.resume-section {
+    margin-bottom: var(--space-8);
+}
+
+.resume-section__title {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding-bottom: var(--space-2);
+    border-bottom: 2px solid rgba(74, 0, 106, 0.1);
+    margin-bottom: var(--space-6);
+}
+
+/* ── 5. Resume Entry (Experience / Education) ───────────────── */
+.resume-entry {
+    margin-bottom: var(--space-6);
+}
+
+.resume-entry__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: var(--space-1);
+}
+
+.resume-entry__role {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.resume-entry__dates {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    white-space: nowrap;
+}
+
+.resume-entry__company {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    color: var(--color-accent);
+    margin-bottom: var(--space-2);
+}
+
+.resume-entry__description {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    line-height: 1.65;
+}
+
+.resume-entry__list {
+    list-style: none;
+    padding: 0;
+    margin: var(--space-2) 0 0 0;
+}
+
+.resume-entry__list li {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    padding-left: var(--space-4);
+    position: relative;
+    margin-bottom: var(--space-1);
+}
+
+.resume-entry__list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+}
+
+/* ── 6. Skills Grid ─────────────────────────────────────────── */
+.resume-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════════════════════ */
+@media (max-width: 767px) {
+    .resume-paper {
+        padding: var(--space-8) var(--space-6);
+        margin: 0 var(--space-4) var(--space-12);
+        border-radius: var(--radius-lg);
+    }
+
+    .resume-header__name {
+        font-size: var(--text-2xl);
+    }
+
+    .resume-header__contact {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-2);
+    }
+
+    .resume-entry__header {
+        flex-direction: column;
+        gap: var(--space-1);
+    }
+
+    .resume-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* ── Print Styles ───────────────────────────────────────────── */
+@media print {
+    body {
+        background: white !important;
+    }
+
+    .navbar,
+    .mobile-nav-overlay,
+    .navbar-spacer,
+    .page-header,
+    .resume-actions,
+    .footer,
+    .scroll-progress-bar {
+        display: none !important;
+    }
+
+    .resume-paper {
+        box-shadow: none;
+        padding: 0;
+        margin: 0;
+        border-radius: 0;
+    }
+
+    .resume-paper::before {
+        display: none;
+    }
+}
