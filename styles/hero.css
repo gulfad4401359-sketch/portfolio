@@ -189,51 +189,45 @@
     gap: var(--space-4);
 }
 
-/* ── 7. Resume CTA (end of scroll story) ─────────────────────── */
-.resume-cta {
-    position: absolute;
-    bottom: 6vh;
-    left: 50%;
-    transform: translateX(-50%);
-    width: min(80%, 360px);
-    opacity: 0;
-    /* Hidden by default, JS controls */
-    text-align: center;
-    pointer-events: auto;
-    z-index: 5;
+/* ── 7. Resume CTA (below scroll story, normal flow) ─────────── */
+.resume-cta-section {
+    display: flex;
+    justify-content: center;
+    padding: var(--space-8) var(--space-6);
 }
 
 .resume-portal {
-    display: flex;
-    flex-direction: column;
+    display: inline-flex;
     align-items: center;
-    justify-content: center;
-    padding: var(--space-6) var(--space-6);
-    background: rgba(255, 244, 240, 0.6);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    gap: var(--space-3);
+    padding: var(--space-4) var(--space-8);
+    background: rgba(255, 244, 240, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(74, 0, 106, 0.12);
-    border-radius: var(--radius-xl);
-    box-shadow: var(--shadow-card);
+    border-radius: var(--radius-full);
+    box-shadow: var(--shadow-sm);
     text-decoration: none;
     transition: border-color var(--duration-normal) ease,
-        box-shadow var(--duration-normal) ease;
+        box-shadow var(--duration-normal) ease,
+        transform 200ms ease;
     cursor: pointer;
 }
 
 .resume-portal:hover {
     border-color: var(--color-accent);
-    box-shadow: var(--shadow-card), 0 0 30px rgba(232, 115, 90, 0.15);
+    box-shadow: var(--shadow-md), 0 0 20px rgba(232, 115, 90, 0.12);
+    transform: translateY(-2px);
 }
 
 .resume-portal__icon {
-    width: 32px;
-    height: 32px;
-    margin-bottom: var(--space-3);
+    width: 20px;
+    height: 20px;
     color: var(--color-text);
-    opacity: 0.7;
+    opacity: 0.6;
     transition: color var(--duration-normal) ease,
         opacity var(--duration-normal) ease;
+    flex-shrink: 0;
 }
 
 .resume-portal:hover .resume-portal__icon {
@@ -242,12 +236,11 @@
 }
 
 .resume-portal__label {
-    font-family: var(--font-display);
-    font-size: var(--text-lg);
-    font-weight: 700;
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-weight: 600;
     color: var(--color-text);
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.04em;
     transition: color var(--duration-normal) ease;
 }
 
@@ -345,13 +338,7 @@
         align-items: center;
     }
 
-    .resume-cta {
-        position: relative;
-        top: auto;
-        left: auto;
-        transform: none;
-        width: 100%;
-        opacity: 1 !important;
-        padding: var(--space-8) 5vw;
+    .resume-cta-section {
+        padding: var(--space-6) 5vw;
     }
 }

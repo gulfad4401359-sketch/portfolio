@@ -29,10 +29,14 @@
     transform: rotateY(180deg);
 }
 
-/* Disable hover flip on home hero card — scroll-anim.js controls it */
-#homeCardContainer:hover .card,
-#homeCardContainer.card-container:hover .card {
-    transform: none;
+/* Disable hover flip AND CSS transition on home hero card —
+   scroll-anim.js controls it entirely via rAF lerp */
+#homeCardContainer .card {
+    transition: none;
+}
+
+#homeCardContainer:hover .card {
+    transform: unset;
 }
 
 /* ── 4. Card Faces — Front & Back ────────────────────────────── */
