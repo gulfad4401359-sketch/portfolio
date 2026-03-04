@@ -1,0 +1,62 @@
+1. Fresh start — no prior progress found in Memory MCP
+2. Reference URL: Jacob Schwartz portfolio — https://jacobschwartz.framer.ai/
+3. Reference URL: Thanh Tran engineering portfolio — https://thanhvtran.com/
+4. Reference URL: Portavia — https://portavia.framer.website
+5. Session status: Planning phase — Implementation Plan in progress
+6. Palette: 60% Blush White #FFF4F0, 30% Deep Violet #4A006A, 10% Rose Gold #E8735A
+7. Fonts: Cormorant Garamond (display), DM Sans (body), JetBrains Mono (mono)
+8. Card flip: perspective 2000px, transform-style preserve-3d, backface-visibility hidden, transition 0.7s ease
+9. Scroll engine: lerp factor 0.08 (locked), requestAnimationFrame loop, sticky viewport pattern
+10. Body background always #FFF4F0, headings always #4A006A, shadows always violet-tinted rgba(74,0,106,x)
+11. Dark surfaces: only navbar and footer (#4A006A), card back face (#4A006A)
+12. No Inter, no Roboto, no Arial, no system fonts. No black shadows. No dark body.
+13. Session 1 COMPLETE — Design System Foundation
+14. Files created this session: styles/global.css, styles/navbar.css, js/navbar.js, navbar-test.html (temp)
+15. Build status: global.css DONE, navbar.css DONE, navbar.js DONE. No pages built yet.
+16. Puppeteer verification: desktop 1440px PASS, mobile 375px PASS — zero discrepancies vs Design Doc §6.1
+17. Design decisions: hamburger breakpoint at 639px (Design Doc says <640px), tablet shrink at 1023px
+18. Navbar uses BEM naming: .navbar, .navbar__photo, .navbar__link, .navbar__cta, .navbar__hamburger
+19. Mobile overlay uses: .mobile-nav-overlay, Cormorant Garamond 700 for large stacked links
+20. Page transition: body.page-leaving { opacity: 0; transition: 200ms } triggers on internal link clicks
+21. Stitch project ID: 5436515788155918760 (Navbar component screen approved by user)
+22. Next session (Session 2) first task: Create styles/card.css (3D flip card component)
+23. Session 2 COMPLETE — Animation Engine
+24. Files created this session: styles/card.css, js/card-flip.js, js/scroll-anim.js, card-test.html (temp)
+25. Build status: card.css DONE, card-flip.js DONE, scroll-anim.js DONE (includes merged timeline.js)
+26. Puppeteer verification: card flip test PASS — 3 cards render with correct 3D structure, rounded corners, images, overlays
+27. scroll-anim.js exports window.AntigravityScroll with initScrollStory(), initIntersectionAnimations(), initStatCounters(), initScrollProgress()
+28. Zero console errors on card test page
+29. Next session (Session 3) first task: Stitch screen for Home Page, then styles/home.css + index.html
+30. Session 3 COMPLETE — Home Page
+31. Files created this session: styles/hero.css, styles/home.css, index.html
+32. Stitch MCP screen generated (ID: 14866e3907f04130ae44f5f613183c19) for home page
+33. Build status: hero.css DONE, home.css DONE, index.html DONE
+34. Puppeteer verified desktop 1440px: navbar pill, split hero text, 3D card centered, 400vh scroll story, teaser grid, footer — ALL PASS
+35. Puppeteer verified mobile 375px: static stacked layout, skills tags, stat counters 3+/8/12+, resume CTA portal, teasers — ALL PASS
+36. Total files completed through Session 3: 9 (global.css, navbar.css, navbar.js, card.css, card-flip.js, scroll-anim.js, hero.css, home.css, index.html)
+37. Next session: Session 4 — Projects Page (projects.css, projects.html)
+38. Session 4 COMPLETE — Projects Page
+39. Files created this session: styles/timeline.css, styles/projects.css, projects.html
+40. Bug fix: scroll-anim.js updated to observe .timeline-entry in addition to .timeline-card
+41. Bug fix: removed orphaned initTimelineObserver call from projects.html
+42. Puppeteer verified desktop 1440px: 8 cards alternating L/R, images loaded, timeline line + dots, page header, footer — ALL PASS
+43. Mobile layout structurally confirmed: timeline collapses to left-aligned
+44. Total files completed through Session 4: 12 (global.css, navbar.css, navbar.js, card.css, card-flip.js, scroll-anim.js, hero.css, home.css, index.html, timeline.css, projects.css, projects.html)
+45. Next session: Session 5 — Experience Page (experience.css, experience.html)
+46. Session 5 COMPLETE — Experience Page
+47. Files created: styles/experience.css, experience.html
+48. Bug fix: moved footer + scroll-progress-bar CSS from home.css to global.css (all pages need footer)
+49. Puppeteer verified desktop 1440px: EXPERIENCE header, 2 cards alternating L/R, timeline, footer with Deep Violet bg + social icons — ALL PASS
+50. Puppeteer verified mobile 375px: stacked layout, footer icons 18px — ALL PASS
+51. Total files completed through Session 5: 14 (global.css modified, experience.css new, experience.html new)
+52. Next session: Session 6 — Contact & Resume (contact.css, contact.html, resume.css, resume.html)
+53. Session 6 COMPLETE — Contact & Resume Pages
+54. Files created: styles/contact.css, js/contact.js, contact.html, styles/resume.css, resume.html
+55. Contact page: two-column grid (form + info panel), 4 validated fields, email/location/availability rows, social links
+56. Resume page: Download PDF + Print buttons, white paper card with gradient accent, Summary/Experience/Education/Skills sections
+57. Puppeteer verified both pages at 1440px — ALL PASS
+58. Total files completed through Session 6: 19
+59. Next session: Session 7 — Detail Pages & Polish
+60. projects/ and experience/ subdirectories deleted (2026-03-03). All 10 detail pages will be created at root level: project-1.html through project-8.html and experience-1.html, experience-2.html.
+61. Pre-Session 7 audit completed (2026-03-03) — all Sessions 1–6 files verified clean. Zero CSS discrepancies. All locked values confirmed: lerp 0.08, flip 700ms, perspective 2000px. 58 CSS variables in global.css. No black shadows. No hardcoded fonts outside global.css.
+62. Session 7 COMPLETE. Created styles/detail.css (197 lines, 7 sections). Created all 10 detail pages at root level: project-1.html through project-8.html, experience-1.html, experience-2.html. All pages use detail-header--experience modifier for experience number labels. Prev/next nav chain complete. All committed to GitHub — final commit: 016cbb311e43db0a47bc65d98a95f5a5b2a852b7. Puppeteer verified: project-1.html (1440+375px PASS), experience-1.html (1440px PASS). Session 7 is the final session. Portfolio is complete.
