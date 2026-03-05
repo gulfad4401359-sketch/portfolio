@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Open Source CLI Tool — [OWNER_NAME] Portfolio</title>
+    <title>Statically Indeterminate Beam Design & FEA — [OWNER_NAME] Portfolio</title>
     <meta name="description"
-        content="Case study: building an open-source CLI tool for frontend developers that reached 8,000 GitHub stars.">
+        content="Group project: statically indeterminate I-beam designed in SolidWorks and validated through ANSYS FEA under combined loading — remote force, moment, and distributed load applied simultaneously.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -41,67 +41,91 @@
         <a href="projects.html" class="detail-back">← Back to Projects</a>
         <header class="detail-header">
             <p class="detail-header__number">Project 07</p>
-            <h1 class="detail-header__title">Open Source CLI Tool</h1>
+            <h1 class="detail-header__title">Statically Indeterminate Beam Design & FEA</h1>
             <div class="detail-header__line" aria-hidden="true"></div>
             <div class="detail-header__tags">
-                <span class="tag">Node.js</span><span class="tag">Open Source</span>
-                <span class="tag">CLI</span><span class="tag">Developer Tools</span>
+                <span class="tag">SolidWorks</span><span class="tag">ANSYS Mechanical</span>
+                <span class="tag">FEA</span><span class="tag">Solid Mechanics</span>
             </div>
-            <p class="detail-header__meta">Jan 2021 — Ongoing</p>
         </header>
         <div class="detail-hero">
-            <img class="detail-hero__img" src="https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=1600&q=80"
-                alt="Terminal window showing CLI tool commands and output" loading="eager">
+            <img class="detail-hero__img" src="beam_orth.png"
+                alt="SolidWorks 3D isometric render of I-beam cross-section — flanged structural beam" loading="eager">
         </div>
         <div class="detail-body">
             <article class="detail-prose">
                 <div class="detail-prose__section">
                     <h2 class="detail-prose__heading">Project Overview</h2>
-                    <p class="detail-prose__text">Built and maintained an open-source CLI tool that scaffolds
-                        opinionated frontend project structures, enforces code quality standards via automated linting
-                        and formatting, and generates component boilerplate. The tool has been downloaded over 180,000
-                        times on npm.</p>
+                    <p class="detail-prose__text">Designed the 3D model and conducted Finite Element Analysis for a
+                        statically indeterminate beam as part of a group CEP assignment for ME-302 Solid Mechanics II at
+                        NED University. The beam was modelled as an I-section in SolidWorks based on calculated
+                        cross-sectional dimensions and imported into ANSYS Mechanical for static structural validation
+                        under combined loading conditions.</p>
                 </div>
                 <div class="detail-prose__section">
                     <h2 class="detail-prose__heading">Challenge</h2>
-                    <p class="detail-prose__text">Every new project at my previous employer required the same 2-hour
-                        setup ritual: configuring ESLint, Prettier, Husky, lint-staged, TypeScript, and directory
-                        structure. With teams of 20+ developers, inconsistency in setup led to merge conflicts, CI
-                        failures, and onboarding friction for new hires.</p>
+                    <p class="detail-prose__text">The beam was subjected to simultaneous complex loading — a 25 kN
+                        remote force, a 50 kN-m applied moment, and a 9 kN transverse force acting on a 2-metre
+                        statically indeterminate span. Designing a cross-section that satisfied both the maximum bending
+                        stress limit of 150 MPa and a deflection limit of 50 mm while remaining cost-effective required
+                        careful selection of I-beam geometry and material properties before any physical validation.</p>
                 </div>
                 <div class="detail-prose__section">
                     <h2 class="detail-prose__heading">Solution</h2>
-                    <p class="detail-prose__text">Extracted the setup process into a single CLI command. Designed a
-                        plugin architecture to support React, Vue, and Vanilla TS targets. Added interactive prompts
-                        using Inquirer.js to customise scaffolding without requiring documentation. Published to npm and
-                        open-sourced on GitHub with full documentation site.</p>
+                    <p class="detail-prose__text">Designed an I-beam cross-section in SolidWorks with a 200 mm flange
+                        width, 230 mm total height, and 60 mm web thickness based on a required moment of inertia of
+                        2×10⁻⁴ m⁴. The geometry was modelled as a full 3D solid spanning 2 metres with defined segment
+                        lengths. In ANSYS Mechanical, a static structural analysis was configured with a fixed support,
+                        remote force of 25,000 N, applied moment of 50,000 N-m, and a 9,000 N transverse force. The
+                        simulation confirmed a peak von Mises stress of 58.43 MPa — well below the 150 MPa allowable
+                        bending stress — and total deformation within the 50 mm deflection limit, validating the
+                        analytical solution.</p>
                 </div>
             </article>
+            <div class="detail-hero" style="margin-top: 2rem;">
+                <img class="detail-hero__img" src="draw_beam.png"
+                    alt="I-beam cross-section engineering drawing — flange 200mm wide, total height 230mm, web thickness 60mm"
+                    loading="lazy">
+            </div>
+            <div class="detail-hero" style="margin-top: 2rem;">
+                <img class="detail-hero__img" src="draw_2_beam.png"
+                    alt="Beam span drawing — 2.0m total length with segment dimensions" loading="lazy">
+            </div>
+            <div class="detail-hero" style="margin-top: 2rem;">
+                <img class="detail-hero__img" src="total_deform.png"
+                    alt="ANSYS total deformation result under combined loading conditions" loading="lazy">
+            </div>
             <aside class="detail-meta" aria-label="Project details">
                 <div>
                     <span class="detail-meta__label">Tech Stack</span>
                     <div class="detail-meta__tags">
-                        <span class="tag">Node.js</span><span class="tag">TypeScript</span>
-                        <span class="tag">Inquirer.js</span><span class="tag">Jest</span>
+                        <span class="tag">SolidWorks</span><span class="tag">ANSYS Mechanical</span>
+                        <span class="tag">Static Structural</span><span class="tag">FEA</span><span class="tag">I-Beam
+                            Design</span>
                     </div>
                 </div>
                 <hr class="detail-meta__divider">
-                <div><span class="detail-meta__label">Year</span><span class="detail-meta__value">2021 — Present</span>
+                <div><span class="detail-meta__label">Year</span><span class="detail-meta__value">2024</span>
                 </div>
-                <div><span class="detail-meta__label">Role</span><span class="detail-meta__value">Creator &
-                        Maintainer</span></div>
+                <div><span class="detail-meta__label">Role</span><span class="detail-meta__value">Group Project — 3D
+                        Modelling & FEA (SolidWorks + ANSYS)</span></div>
             </aside>
         </div>
         <section class="detail-outcomes" aria-labelledby="outcomes-heading-7">
             <h2 class="detail-outcomes__title" id="outcomes-heading-7">Key Outcomes</h2>
             <ul class="detail-outcomes__list">
-                <li class="detail-outcomes__item">8,000+ GitHub stars and 180,000+ npm downloads since launch</li>
-                <li class="detail-outcomes__item">New project setup time reduced from 2 hours to under 3 minutes across
-                    all adopting teams</li>
-                <li class="detail-outcomes__item">42 contributors from the open source community; 3 major version
-                    releases maintained</li>
+                <li class="detail-outcomes__item">Peak von Mises stress of 58.43 MPa confirmed — well below the 150 MPa
+                    allowable bending stress limit, validating safe design</li>
+                <li class="detail-outcomes__item">Total deformation within the 50 mm deflection limit under combined
+                    remote force, moment, and transverse loading</li>
+                <li class="detail-outcomes__item">FEA simulation results aligned with analytical solution — confirming
+                    the selected I-beam cross-section geometry and material properties as structurally adequate</li>
             </ul>
         </section>
+        <div class="detail-hero" style="margin-top: 2rem;">
+            <img class="detail-hero__img" src="vom_mices_stress.png"
+                alt="ANSYS equivalent von Mises stress result — peak 58.43 MPa under combined loading" loading="lazy">
+        </div>
         <nav class="detail-nav" aria-label="Project navigation">
             <a href="project-6.html" class="detail-nav__link detail-nav__link--prev">← Previous Project</a>
             <a href="project-8.html" class="detail-nav__link">Next Project →</a>
