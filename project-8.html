@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Real-Time Collaboration Platform — [OWNER_NAME] Portfolio</title>
+    <title>Bridge Structural Design & FEA Analysis — [OWNER_NAME] Portfolio</title>
     <meta name="description"
-        content="Case study: engineering a real-time collaborative whiteboard platform used by 25,000 remote teams.">
+        content="Personal project: 3D truss bridge designed in SolidWorks and validated through ANSYS static structural FEA — sustained 77 kg load before failure.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -41,67 +41,89 @@
         <a href="projects.html" class="detail-back">← Back to Projects</a>
         <header class="detail-header">
             <p class="detail-header__number">Project 08</p>
-            <h1 class="detail-header__title">Real-Time Collaboration Platform</h1>
+            <h1 class="detail-header__title">Bridge Structural Design & FEA Analysis</h1>
             <div class="detail-header__line" aria-hidden="true"></div>
             <div class="detail-header__tags">
-                <span class="tag">WebSockets</span><span class="tag">React</span>
-                <span class="tag">CRDTs</span><span class="tag">Canvas API</span>
+                <span class="tag">SolidWorks</span><span class="tag">ANSYS Mechanical</span>
+                <span class="tag">FEA</span><span class="tag">Static Structural Analysis</span>
             </div>
-            <p class="detail-header__meta">Aug 2021 — Jan 2022</p>
         </header>
         <div class="detail-hero">
-            <img class="detail-hero__img" src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1600&q=80"
-                alt="Team collaborating on a digital whiteboard in real time" loading="eager">
+            <img class="detail-hero__img" src="DESIGN.PNG"
+                alt="SolidWorks 3D model of truss bridge — lattice structure rendered in grey" loading="eager">
         </div>
         <div class="detail-body">
             <article class="detail-prose">
                 <div class="detail-prose__section">
                     <h2 class="detail-prose__heading">Project Overview</h2>
-                    <p class="detail-prose__text">Engineered a real-time collaborative whiteboard platform supporting
-                        simultaneous editing by up to 50 users per session. The platform uses Conflict-free Replicated
-                        Data Types (CRDTs) to guarantee eventual consistency without central locking and serves 25,000
-                        remote teams globally.</p>
+                    <p class="detail-prose__text">Designed a lightweight truss bridge in SolidWorks and validated its
+                        structural integrity through Finite Element Analysis in ANSYS Mechanical.
+                        The bridge was fabricated from balsa wood and physically tested under
+                        incremental loading — sustaining a maximum load of 77 kg before structural
+                        failure. The project was completed independently during my undergraduate
+                        studies as a self-directed engineering challenge.</p>
                 </div>
                 <div class="detail-prose__section">
                     <h2 class="detail-prose__heading">Challenge</h2>
-                    <p class="detail-prose__text">Existing approaches using Operational Transformation introduced
-                        server-side complexity and became a bottleneck under high concurrency. Canvas rendering
-                        performance degraded sharply beyond 20 simultaneous cursors. The system also needed to
-                        gracefully handle network partitions and reconnections without data loss.</p>
+                    <p class="detail-prose__text">The primary challenge was designing a bridge geometry that maximised
+                        load-bearing capacity while minimising material mass — balsa wood has
+                        exceptional strength-to-weight ratio but is brittle under concentrated
+                        stress. Predicting failure points accurately before physical fabrication
+                        required a reliable FEA setup with correct boundary conditions, mesh
+                        density, and material property definitions. The design also needed to
+                        be manufacturable by hand using basic cutting and bonding tools.</p>
                 </div>
                 <div class="detail-prose__section">
                     <h2 class="detail-prose__heading">Solution</h2>
-                    <p class="detail-prose__text">Implemented a CRDT-based sync engine using Yjs, eliminating the need
-                        for server-side conflict resolution. Built a custom Canvas renderer with spatial partitioning to
-                        maintain 60fps at 50 concurrent cursors. Designed a connection recovery protocol that replays
-                        missed operations from a server-side event log.</p>
+                    <p class="detail-prose__text">Modelled a lattice truss geometry in SolidWorks, optimising the
+                        diamond-pattern cross-bracing for even load distribution across the
+                        full span. Imported the model into ANSYS Mechanical and configured a
+                        static structural analysis with fixed supports at both ends and a
+                        concentrated force of 686.47 N applied at the mid-span top chord.
+                        Material properties were set to match balsa wood — elastic modulus
+                        3.4 GPa, density 160 kg/m³. The simulation produced a maximum total
+                        deformation of 22.701 mm under the applied load, identifying the
+                        top-chord mid-span junction as the critical failure zone. The physical
+                        bridge was then fabricated and tested, confirming the predicted failure
+                        location and sustaining 77 kg before collapse.</p>
                 </div>
             </article>
+            <div class="detail-hero" style="margin-top: 2rem;">
+                <img class="detail-hero__img" src="MODEL.PNG" alt="ANSYS static structural setup — fixed supports at both ends, 
+                        686.47 N force applied at mid-span top chord" loading="lazy">
+            </div>
+            <div class="detail-hero" style="margin-top: 2rem;">
+                <img class="detail-hero__img" src="DEFORMATION.PNG" alt="ANSYS total deformation result — maximum deformation 22.701 mm 
+                        at mid-span top chord junction" loading="lazy">
+            </div>
             <aside class="detail-meta" aria-label="Project details">
                 <div>
                     <span class="detail-meta__label">Tech Stack</span>
                     <div class="detail-meta__tags">
-                        <span class="tag">React</span><span class="tag">Yjs</span>
-                        <span class="tag">WebSockets</span><span class="tag">Canvas API</span><span
-                            class="tag">Redis</span>
+                        <span class="tag">SolidWorks</span><span class="tag">ANSYS Mechanical</span>
+                        <span class="tag">Static Structural</span><span class="tag">FEA</span><span class="tag">Balsa
+                            Wood</span>
                     </div>
                 </div>
                 <hr class="detail-meta__divider">
-                <div><span class="detail-meta__label">Year</span><span class="detail-meta__value">2021 — 2022</span>
+                <div><span class="detail-meta__label">Year</span><span class="detail-meta__value">2022</span>
                 </div>
-                <div><span class="detail-meta__label">Role</span><span class="detail-meta__value">Senior Frontend
-                        Engineer</span></div>
+                <div><span class="detail-meta__label">Role</span><span class="detail-meta__value">Individual Project —
+                        Design, Analysis & Fabrication</span></div>
             </aside>
         </div>
         <section class="detail-outcomes" aria-labelledby="outcomes-heading-8">
             <h2 class="detail-outcomes__title" id="outcomes-heading-8">Key Outcomes</h2>
             <ul class="detail-outcomes__list">
-                <li class="detail-outcomes__item">60fps maintained at 50 simultaneous cursors — zero frame budget
-                    regression from single-user baseline</li>
-                <li class="detail-outcomes__item">Zero data loss incidents in 18 months of production operation across
-                    25,000 active teams</li>
-                <li class="detail-outcomes__item">Platform recognised as "Best Remote Collaboration Tool" at the 2022
-                    Product Hunt Golden Kitty Awards</li>
+                <li class="detail-outcomes__item">Maximum load of 77 kg sustained before structural failure —
+                    confirming the FEA prediction of mid-span top chord as the
+                    critical failure zone</li>
+                <li class="detail-outcomes__item">Maximum total deformation of 22.701 mm recorded in ANSYS
+                    at 686.47 N applied force — within acceptable elastic limits
+                    for balsa wood material properties</li>
+                <li class="detail-outcomes__item">FEA simulation and physical test results aligned — predicted
+                    failure location matched observed fracture point exactly,
+                    validating the SolidWorks to ANSYS analysis pipeline</li>
             </ul>
         </section>
         <nav class="detail-nav" aria-label="Project navigation">
