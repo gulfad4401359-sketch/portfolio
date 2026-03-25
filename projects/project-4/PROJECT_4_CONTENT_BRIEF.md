@@ -1,0 +1,246 @@
+# PROJECT 4 CONTENT BRIEF
+## Pressure Vessel Vibration Analysis — Modal & Harmonic Response
+
+---
+
+## STEP 0 — CONFIRM IMAGES IN FOLDER
+All images must be present at: projects/project-4/
+
+| Filename | Used for |
+|---|---|
+| Screenshot_22-3-2026_2181_.jpeg | CARD front image |
+| Screenshot_22-3-2026_21814_.jpeg | Hero image (assembly isometric) |
+| Screenshot_22-3-2026_21845_.jpeg | Overview section (SolidWorks vessel body) |
+| Screenshot_22-3-2026_21837_.jpeg | Overview section (SolidWorks saddle) |
+| Screenshot_22-3-2026_21925_.jpeg | Challenge section (ANSYS modal deformation) |
+| Screenshot_22-3-2026_21940_.jpeg | Solution section (ANSYS harmonic deformation) |
+| Screenshot_22-3-2026_21106_.jpeg | Solution section (frequency response graph) |
+
+Confirm all 7 files exist before proceeding.
+
+---
+
+## PART 1 — projects.html — PROJECT 04 CARD
+
+Locate the Project 04 card block (lines ~171–201).
+Replace ALL placeholder tokens exactly as specified below.
+Do NOT touch any other card or any other part of the file.
+
+**Card front:**
+- img src: `projects/project-4/Screenshot_22-3-2026_2181_.jpeg`
+- img alt: `SolidWorks orthographic drawing of horizontal pressure vessel with saddle supports — dimensions 12.13 m length, Ø4.05 m`
+- Project number: `Project 04` (already correct)
+- h3 title (front): `Pressure Vessel Vibration Analysis`
+- Tag 1: `SolidWorks`
+- Tag 2: `ANSYS Mechanical`
+- Tag 3: `Structural Dynamics`
+
+**Card back:**
+- Project number: `Project 04` (already correct)
+- h3 title (back): `Pressure Vessel Vibration Analysis`
+- Summary (MAX 12 WORDS): `Pressure vessel designed in SolidWorks, vibration validated via ANSYS simulation.`
+- Outcome 1 (MAX 8 WORDS): `Natural frequencies confirmed — 5% analytical error`
+- Outcome 2 (MAX 8 WORDS): `Harmonic response under wind excitation simulated`
+- CTA link: `project-4.html` (already correct)
+
+---
+
+## PART 2 — project-4.html — FULL DETAIL PAGE
+
+Replace the entire contents of project-4.html with the following.
+IMAGE PATH RULE: Every src MUST use `projects/project-4/FILENAME` — never just the filename.
+
+---
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pressure Vessel Vibration Analysis — Muhammad Ali Portfolio</title>
+    <meta name="description"
+        content="Pressure vessel vibration study — modal and harmonic analysis using SolidWorks and ANSYS Mechanical.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/detail.css">
+</head>
+
+<body class="page-detail-project">
+    <div class="scroll-progress-bar" aria-hidden="true"></div>
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="navbar__links">
+            <a href="index.html" class="navbar__link">Home</a>
+            <a href="projects.html" class="navbar__link navbar__link--active">Projects</a>
+            <a href="experience.html" class="navbar__link">Experience</a>
+        </div>
+        <a href="contact.html" class="navbar__cta">Contact</a>
+        <button class="navbar__hamburger" aria-label="Open menu"
+            aria-expanded="false"><span></span><span></span><span></span></button>
+    </nav>
+    <div class="navbar-spacer"></div>
+    <div class="mobile-nav-overlay" role="dialog" aria-label="Mobile navigation" aria-hidden="true">
+        <button class="mobile-nav-overlay__close" aria-label="Close menu">✕</button>
+        <nav class="mobile-nav-overlay__links">
+            <a href="index.html">Home</a><a href="projects.html">Projects</a>
+            <a href="experience.html">Experience</a><a href="contact.html">Contact</a>
+        </nav>
+    </div>
+    <main class="container" id="main-content">
+        <a href="projects.html" class="detail-back">← Back to Projects</a>
+        <header class="detail-header">
+            <p class="detail-header__number">Project 04</p>
+            <h1 class="detail-header__title">Pressure Vessel Vibration Analysis</h1>
+            <div class="detail-header__line" aria-hidden="true"></div>
+            <div class="detail-header__tags">
+                <span class="tag">SolidWorks</span>
+                <span class="tag">ANSYS Mechanical</span>
+                <span class="tag">Modal Analysis</span>
+                <span class="tag">Harmonic Response</span>
+                <span class="tag">Structural Dynamics</span>
+            </div>
+            <p class="detail-header__meta">2025</p>
+        </header>
+        <div class="detail-hero">
+            <img class="detail-hero__img"
+                src="projects/project-4/Screenshot_22-3-2026_21814_.jpeg"
+                alt="SolidWorks isometric assembly of horizontal pressure vessel with two saddle-plate supports"
+                loading="eager"
+                style="object-fit: contain; max-width: 100%; height: auto; display: block; margin: 0 auto; border-radius: 12px;">
+        </div>
+        <div class="detail-body">
+            <article class="detail-prose">
+                <div class="detail-prose__section">
+                    <h2 class="detail-prose__heading">Project Overview</h2>
+                    <p class="detail-prose__text">This Complex Engineering Problem (CEP) involved designing a horizontal
+                        pressure vessel with two saddle-plate supports in SolidWorks, then conducting full vibration
+                        analysis in ANSYS Mechanical. The vessel operates at 15 bar design pressure with Stainless Steel
+                        316L — chosen for corrosion resistance and vibration damping properties. As the team's design
+                        and simulation lead, I built the complete 3D assembly and ran both the modal (free vibration)
+                        and harmonic response (forced vibration) simulations.</p>
+                </div>
+
+                <div class="detail-image-row">
+                    <img src="projects/project-4/Screenshot_22-3-2026_21845_.jpeg"
+                        alt="SolidWorks 3D model of pressure vessel shell body — cylindrical with hemispherical end caps"
+                        class="detail-prose__img"
+                        style="object-fit: contain; max-width: 100%; height: auto; display: block; margin: 0 auto; border-radius: 12px;">
+                    <img src="projects/project-4/Screenshot_22-3-2026_21837_.jpeg"
+                        alt="SolidWorks 3D model of saddle-plate support — 120-degree contact angle, 4.11 m length"
+                        class="detail-prose__img"
+                        style="object-fit: contain; max-width: 100%; height: auto; display: block; margin: 0 auto; border-radius: 12px;">
+                </div>
+
+                <div class="detail-prose__section">
+                    <h2 class="detail-prose__heading">Challenge</h2>
+                    <p class="detail-prose__text">Industrial pressure vessels are routinely subjected to ground and wind
+                        vibrations. The challenge was to analytically model the vessel as a 2-DOF system, manually solve
+                        for natural frequencies and mode shapes, and then verify the analytical results against ANSYS
+                        simulation. The vessel geometry — 12.13 m long, outer diameter 4.05 m, shell thickness 25.79 mm
+                        — required careful application of Barlow's formula and thin-shell assumptions to ensure
+                        R/t &gt; 10 compliance.</p>
+                </div>
+
+                <div class="detail-image-row">
+                    <img src="projects/project-4/Screenshot_22-3-2026_21925_.jpeg"
+                        alt="ANSYS modal analysis — total deformation at first natural frequency 10.717 Hz, showing mode shape of pressure vessel"
+                        class="detail-prose__img"
+                        style="object-fit: contain; max-width: 100%; height: auto; display: block; margin: 0 auto; border-radius: 12px;">
+                </div>
+
+                <div class="detail-prose__section">
+                    <h2 class="detail-prose__heading">Solution</h2>
+                    <p class="detail-prose__text">The 2-DOF equations of motion were assembled using the mass and
+                        stiffness matrices of the vessel-saddle system. Eigenvalue analysis yielded analytical natural
+                        frequencies of 10.9 Hz and 19.5 Hz. In ANSYS, a modal analysis with fixed supports on the
+                        saddle bases confirmed frequencies of 10.717 Hz and 18.492 Hz — errors of 5% and 8%
+                        respectively. Harmonic response analysis was then performed using a wind-derived excitation
+                        force of 3.49 N (extracted via FFT of wind speed data), sweeping across the frequency range to
+                        map amplitude response, equivalent von Mises stress, and phase angle at each step.</p>
+                </div>
+
+                <div class="detail-image-row">
+                    <img src="projects/project-4/Screenshot_22-3-2026_21940_.jpeg"
+                        alt="ANSYS harmonic response — total deformation contour plot of pressure vessel under harmonic wind excitation"
+                        class="detail-prose__img"
+                        style="object-fit: contain; max-width: 100%; height: auto; display: block; margin: 0 auto; border-radius: 12px;">
+                    <img src="projects/project-4/Screenshot_22-3-2026_21106_.jpeg"
+                        alt="ANSYS frequency response graph — amplitude vs frequency (11.494 to 18.492 Hz) showing harmonic response behaviour"
+                        class="detail-prose__img"
+                        style="object-fit: contain; max-width: 100%; height: auto; display: block; margin: 0 auto; border-radius: 12px;">
+                </div>
+
+            </article>
+            <aside class="detail-meta" aria-label="Project details">
+                <div>
+                    <span class="detail-meta__label">Tech Stack</span>
+                    <div class="detail-meta__tags">
+                        <span class="tag">SolidWorks</span>
+                        <span class="tag">ANSYS Mechanical</span>
+                        <span class="tag">Modal Analysis</span>
+                        <span class="tag">Harmonic Response</span>
+                        <span class="tag">Structural Dynamics</span>
+                        <span class="tag">FEA</span>
+                    </div>
+                </div>
+                <hr class="detail-meta__divider">
+                <div><span class="detail-meta__label">Year</span><span class="detail-meta__value">2025</span></div>
+                <div><span class="detail-meta__label">Role</span><span class="detail-meta__value">Design & Simulation — SolidWorks 3D Model, ANSYS Modal & Harmonic Analysis</span></div>
+                <div><span class="detail-meta__label">Team</span><span class="detail-meta__value">Group CEP — 4 Members, ME Vibrations, NED University</span></div>
+            </aside>
+        </div>
+        <section class="detail-outcomes" aria-labelledby="outcomes-heading-4">
+            <h2 class="detail-outcomes__title" id="outcomes-heading-4">Key Outcomes</h2>
+            <ul class="detail-outcomes__list">
+                <li class="detail-outcomes__item">ANSYS modal frequencies of 10.717 Hz and 18.492 Hz confirmed analytical solution within 5% and 8% error</li>
+                <li class="detail-outcomes__item">Harmonic response mapped across full frequency sweep — amplitude, von Mises stress, and phase angle documented at each step</li>
+                <li class="detail-outcomes__item">Vessel validated safe under wind-derived excitation — stress and deformation well within Stainless Steel 316L limits</li>
+            </ul>
+        </section>
+        <nav class="detail-nav" aria-label="Project navigation">
+            <a href="project-3.html" class="detail-nav__link detail-nav__link--prev">← Previous Project</a>
+            <a href="project-5.html" class="detail-nav__link">Next Project →</a>
+        </nav>
+    </main>
+    <footer class="footer" role="contentinfo">
+        <div class="footer__inner container">
+            <p class="footer__copy">© 2026 [OWNER_NAME] — Built with purpose.</p>
+            <div class="footer__social">
+                <a href="#" class="footer__social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24"
+                        fill="currentColor" width="20" height="20">
+                        <path
+                            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                    </svg></a>
+                <a href="mailto:[OWNER_EMAIL]" class="footer__social-link" aria-label="Email"><svg viewBox="0 0 24 24"
+                        fill="currentColor" width="20" height="20">
+                        <path
+                            d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z" />
+                    </svg></a>
+            </div>
+        </div>
+    </footer>
+    <script src="js/navbar.js"></script>
+    <script src="js/scroll-anim.js"></script>
+</body>
+
+</html>
+```
+
+---
+
+## FINAL INSTRUCTIONS
+
+1. Confirm all 7 image files exist in projects/project-4/
+2. Save projects.html — Project 04 card only (lines ~171–201). Do not touch any other card.
+3. Save project-4.html — full replacement as written above.
+4. Take Puppeteer screenshot of projects.html and project-4.html when done.
+5. Check card back face — if project number or button is out of frame, report immediately.
+6. Do not touch global.css, detail.css, navbar.css, or any other file.
+7. Do not commit.
+8. Report done.

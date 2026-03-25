@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact — [OWNER_NAME] Portfolio</title>
-    <meta name="description" content="Get in touch with [OWNER_NAME]. Send a message or connect on social media.">
+    <title>Contact — Muhammad Ali Portfolio</title>
+    <meta name="description" content="Get in touch with Muhammad Ali. Send a message or connect on social media.">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="styles/contact.css">
 </head>
 
-<body>
+<body class="page-contact">
 
     <!-- ── Scroll Progress Bar ─────────────────────────────────── -->
     <div class="scroll-progress-bar" aria-hidden="true"></div>
@@ -70,31 +70,31 @@
         <div class="contact-grid">
 
             <!-- ── Form Column ────────────────────────────────── -->
-            <form id="contactForm" class="contact-form" novalidate>
+            <form id="contactForm" class="contact-form" action="https://formspree.io/f/xnjoaooy" method="POST" novalidate>
 
                 <div class="contact-form__group">
                     <label for="contactName" class="contact-form__label">Name</label>
-                    <input type="text" id="contactName" class="contact-form__input" placeholder="Your full name"
+                    <input type="text" id="contactName" name="name" class="contact-form__input" placeholder="Your full name"
                         required>
                     <div class="contact-form__error">Please enter your name</div>
                 </div>
 
                 <div class="contact-form__group">
                     <label for="contactEmail" class="contact-form__label">Email</label>
-                    <input type="email" id="contactEmail" class="contact-form__input" placeholder="you@example.com"
+                    <input type="email" id="contactEmail" name="email" class="contact-form__input" placeholder="you@example.com"
                         required>
                     <div class="contact-form__error">Please enter a valid email</div>
                 </div>
 
                 <div class="contact-form__group">
                     <label for="contactSubject" class="contact-form__label">Subject</label>
-                    <input type="text" id="contactSubject" class="contact-form__input" placeholder="What's this about?">
+                    <input type="text" id="contactSubject" name="subject" class="contact-form__input" placeholder="What's this about?">
                     <div class="contact-form__error">Please enter a subject</div>
                 </div>
 
                 <div class="contact-form__group">
                     <label for="contactMessage" class="contact-form__label">Message</label>
-                    <textarea id="contactMessage" class="contact-form__textarea"
+                    <textarea id="contactMessage" name="message" class="contact-form__textarea"
                         placeholder="Tell me about your project or idea…" required></textarea>
                     <div class="contact-form__error">Please enter a message</div>
                 </div>
@@ -122,7 +122,7 @@
                     <div>
                         <div class="contact-detail__label">Email</div>
                         <div class="contact-detail__value">
-                            <a href="mailto:[OWNER_EMAIL]">[OWNER_EMAIL]</a>
+                            <a href="mailto:mohhamadali367@gmail.com">mohhamadali367@gmail.com</a>
                         </div>
                     </div>
                 </div>
@@ -136,14 +136,14 @@
                     </div>
                     <div>
                         <div class="contact-detail__label">Location</div>
-                        <div class="contact-detail__value">[OWNER_LOCATION]</div>
+                        <div class="contact-detail__value">Karachi, Pakistan</div>
                     </div>
                 </div>
 
 
 
                 <div class="contact-info__socials">
-                    <a href="[OWNER_LINKEDIN_URL]" class="contact-info__social-link" aria-label="LinkedIn"
+                    <a href="https://www.linkedin.com/in/muhammad-ali-06ab962a2" class="contact-info__social-link" aria-label="LinkedIn"
                         target="_blank" rel="noopener">
                         <svg viewBox="0 0 24 24">
                             <path
@@ -162,11 +162,11 @@
     <footer class="footer">
         <div class="container">
             <div class="footer__name">
-                [OWNER_NAME] <span class="footer__diamond">◆</span> Portfolio
+                Muhammad Ali <span class="footer__diamond">◆</span> Portfolio
             </div>
-            <p class="footer__tagline">[OWNER_BIO_TAGLINE]</p>
+            <p class="footer__tagline">Mechanical Engineer — designing, simulating, and analysing systems from molecular scale to industrial scale.</p>
             <div class="footer__socials">
-                <a href="[OWNER_LINKEDIN_URL]" class="footer__social-link" aria-label="LinkedIn" target="_blank"
+                <a href="https://www.linkedin.com/in/muhammad-ali-06ab962a2" class="footer__social-link" aria-label="LinkedIn" target="_blank"
                     rel="noopener">
                     <svg viewBox="0 0 24 24">
                         <path
@@ -174,7 +174,7 @@
                     </svg>
                 </a>
             </div>
-            <div class="footer__copyright">© 2026 [OWNER_NAME]. All rights reserved.</div>
+            <div class="footer__copyright">© 2026 Muhammad Ali. All rights reserved.</div>
 
         </div>
     </footer>

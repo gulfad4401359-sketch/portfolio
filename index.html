@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[OWNER_NAME] — [OWNER_DESIGNATION] | Portfolio</title>
-    <meta name="description" content="[OWNER_NAME] — [OWNER_DESIGNATION]. Explore my projects, experience, and skills.">
+    <title>Muhammad Ali — [OWNER_DESIGNATION] | Portfolio</title>
+    <meta name="description" content="Muhammad Ali — [OWNER_DESIGNATION]. Explore my projects, experience, and skills.">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,6 +13,11 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
         rel="stylesheet">
+
+    <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+    <script type="importmap">
+    {"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js"}}
+    </script>
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="styles/global.css">
@@ -22,7 +27,7 @@
     <link rel="stylesheet" href="styles/home.css">
 </head>
 
-<body>
+<body class="page-home">
 
     <!-- ── Scroll Progress Bar ─────────────────────────────────── -->
     <div class="scroll-progress-bar" aria-hidden="true"></div>
@@ -65,49 +70,41 @@
             <div class="hero-text-section" id="heroText">
                 <div class="hero-text">
                     <div class="hero-text__left">
-                        <span class="hero-text__greeting">Hello, I'm</span>
-                        <h1 class="hero-text__name">[OWNER_<wbr>NAME]</h1>
-                        <p class="hero-text__tagline">[OWNER_BIO_TAGLINE] — crafting digital experiences that connect
-                            and inspire.</p>
-                    </div>
-                    <div class="hero-text__right">
-                        <h2 class="hero-text__designation">[OWNER_<wbr>DESIG&shy;NATION]</h2>
+                        <p class="hero-text__tagline" style="margin-top:40vh;">Mechanical Engineer — designing, simulating, and analysing systems from molecular scale to industrial scale.</p>
                     </div>
                 </div>
+                <!-- Water Drop Animation -->
+                <div id="waterdrop-container" style="position:absolute;top:38%;left:50%;transform:translate(-50%,-50%);width:460px;height:460px;z-index:2;pointer-events:none;">
+                  <canvas id="waterdrop-canvas" style="width:100%;height:100%;display:block;"></canvas>
+                </div>
             </div>
+
+
 
             <!-- Phase 1 — Skills Block (LEFT side) -->
             <div class="hero-text-section skills-text" id="skillsText">
                 <p class="section-label">Technical Skills</p>
                 <div class="title-underline title-underline--lg"></div>
 
-                <div class="skills-category">
-                    <h3 class="skills-category__title">Frontend</h3>
-                    <div class="skills-category__tags">
-                        <span class="tag">[OWNER_SKILL_1]</span>
-                        <span class="tag">[OWNER_SKILL_2]</span>
-                        <span class="tag">[OWNER_SKILL_3]</span>
-                        <span class="tag">[OWNER_SKILL_4]</span>
-                    </div>
+                <h3 class="skills__category">CAD &amp; SIMULATION</h3>
+                <div class="skills__tags">
+                    <span class="tag">SolidWorks</span>
+                    <span class="tag">ANSYS Mechanical</span>
+                    <span class="tag">ANSYS Fluent</span>
+                    <span class="tag">LAMMPS</span>
                 </div>
-
-                <div class="skills-category">
-                    <h3 class="skills-category__title">Backend</h3>
-                    <div class="skills-category__tags">
-                        <span class="tag">[OWNER_SKILL_5]</span>
-                        <span class="tag">[OWNER_SKILL_6]</span>
-                        <span class="tag">[OWNER_SKILL_7]</span>
-                    </div>
+                <h3 class="skills__category">ANALYSIS &amp; METHODS</h3>
+                <div class="skills__tags">
+                    <span class="tag">Finite Element Analysis</span>
+                    <span class="tag">Computational Fluid Dynamics</span>
+                    <span class="tag">MD Simulation</span>
                 </div>
-
-                <div class="skills-category">
-                    <h3 class="skills-category__title">Tools &amp; Other</h3>
-                    <div class="skills-category__tags">
-                        <span class="tag">[OWNER_SKILL_8]</span>
-                        <span class="tag">[OWNER_SKILL_9]</span>
-                        <span class="tag">[OWNER_SKILL_10]</span>
-                        <span class="tag">[OWNER_SKILL_11]</span>
-                    </div>
+                <h3 class="skills__category">TOOLS &amp; SOFTWARE</h3>
+                <div class="skills__tags">
+                    <span class="tag">Materials Studio</span>
+                    <span class="tag">OVITO</span>
+                    <span class="tag">Arduino &amp; IoT</span>
+                    <span class="tag">MS Excel &amp; Reporting</span>
                 </div>
             </div>
 
@@ -117,22 +114,17 @@
                 <div class="title-underline title-underline--lg"></div>
 
                 <p class="about-text__bio">
-                    [OWNER_BIO_SHORT] — a 2–3 sentence introduction about who you are, what drives you, and the kind of
-                    work you're passionate about.
+                    Mechanical Engineering graduate from NED University of Engineering & Technology, Karachi. Specialised in computational simulation and structural analysis — with hands-on experience in FEA, CFD, and MD simulation across research projects and industrial internships. Driven by the challenge of engineering systems that hold up under real-world conditions.
                 </p>
 
                 <div class="stat-row">
-                    <div class="stat-card">
-                        <div class="stat-card__number" data-count-to="3" data-count-suffix="+">0</div>
-                        <div class="stat-card__label">Years Exp</div>
-                    </div>
                     <div class="stat-card">
                         <div class="stat-card__number" data-count-to="8">0</div>
                         <div class="stat-card__label">Projects</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-card__number" data-count-to="12" data-count-suffix="+">0</div>
-                        <div class="stat-card__label">Technologies</div>
+                        <div class="stat-card__number" data-count-to="10" data-count-suffix="+">0</div>
+                        <div class="stat-card__label">Tools &amp; Skills</div>
                     </div>
                 </div>
 
@@ -142,29 +134,6 @@
                 </div>
             </div>
 
-            <!-- 3D Hero Card — from card_flip.html + move_and_flip.html -->
-            <div class="card-container" id="homeCardContainer">
-                <div class="card" id="homeCard">
-                    <!-- Front Face — Owner photo -->
-                    <div class="card-face card-front">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=800&fit=crop&crop=face"
-                            alt="[OWNER_NAME]" class="card-image" id="img-front"
-                            data-swap-src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=600&h=800&fit=crop">
-                        <div class="card-front-content">
-                            <h3 class="card-title">[OWNER_NAME]</h3>
-                        </div>
-                    </div>
-                    <!-- Back Face — Second photo or gradient -->
-                    <div class="card-face card-back">
-                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=800&fit=crop"
-                            alt="[OWNER_DESIGNATION]" class="card-image">
-                        <div class="card-front-content">
-                            <h3 class="card-title">[OWNER_DESIGNATION]</h3>
-                            <p class="card-subtitle">[OWNER_TECH_STACK_SHORT]</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
         </div>
     </div>
@@ -180,7 +149,7 @@
                 <line x1="16" y1="17" x2="8" y2="17"></line>
                 <polyline points="10 9 9 9 8 9"></polyline>
             </svg>
-            <span class="resume-portal__label">View My Resume</span>
+            <span class="resume-portal__label">View Resume & More</span>
         </a>
     </section>
 
@@ -199,40 +168,40 @@
                 <div class="teaser-grid">
 
                     <a href="project-1.html" class="teaser-card animate-on-scroll">
-                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop"
-                            alt="[OWNER_PROJECT_1_TITLE]" class="teaser-card__image">
+                        <img src="projects/project-1/Methodology.jpeg"
+                            alt="MD Nanoindentation of Clay Minerals — methodology roadmap" class="teaser-card__image">
                         <div class="teaser-card__body">
                             <div class="teaser-card__number">Project 01</div>
-                            <h3 class="teaser-card__title">[OWNER_PROJECT_1_TITLE]</h3>
+                            <h3 class="teaser-card__title">MD Nanoindentation of Clay Minerals</h3>
                             <div class="teaser-card__tags">
-                                <span class="tag">[OWNER_P1_TAG_1]</span>
-                                <span class="tag">[OWNER_P1_TAG_2]</span>
+                                <span class="tag">MD Simulation</span>
+                                <span class="tag">LAMMPS</span>
                             </div>
                         </div>
                     </a>
 
                     <a href="project-2.html" class="teaser-card animate-on-scroll">
-                        <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=400&fit=crop"
-                            alt="[OWNER_PROJECT_2_TITLE]" class="teaser-card__image">
+                        <img src="projects/project-2/experimental_method_setup.jpeg"
+                            alt="C-Beam cantilever stress analysis experimental setup" class="teaser-card__image">
                         <div class="teaser-card__body">
                             <div class="teaser-card__number">Project 02</div>
-                            <h3 class="teaser-card__title">[OWNER_PROJECT_2_TITLE]</h3>
+                            <h3 class="teaser-card__title">C-Beam Stress Analysis</h3>
                             <div class="teaser-card__tags">
-                                <span class="tag">[OWNER_P2_TAG_1]</span>
-                                <span class="tag">[OWNER_P2_TAG_2]</span>
+                                <span class="tag">SolidWorks</span>
+                                <span class="tag">ANSYS</span>
                             </div>
                         </div>
                     </a>
 
                     <a href="project-3.html" class="teaser-card animate-on-scroll">
-                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=400&fit=crop"
-                            alt="[OWNER_PROJECT_3_TITLE]" class="teaser-card__image">
+                        <img src="projects/project-3/project3_card.png"
+                            alt="IoT Smart Parking Management System — Arduino and NodeMCU" class="teaser-card__image">
                         <div class="teaser-card__body">
                             <div class="teaser-card__number">Project 03</div>
-                            <h3 class="teaser-card__title">[OWNER_PROJECT_3_TITLE]</h3>
+                            <h3 class="teaser-card__title">IoT Smart Parking Management System</h3>
                             <div class="teaser-card__tags">
-                                <span class="tag">[OWNER_P3_TAG_1]</span>
-                                <span class="tag">[OWNER_P3_TAG_2]</span>
+                                <span class="tag">Arduino</span>
+                                <span class="tag">IoT</span>
                             </div>
                         </div>
                     </a>
@@ -247,15 +216,19 @@
                     <a href="experience.html" class="teaser-block__link">Full History →</a>
                 </div>
                 <a href="experience-1.html" class="teaser-card teaser-experience animate-on-scroll">
-                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=480&fit=crop"
-                        alt="[OWNER_EXP_1_COMPANY]" class="teaser-card__image">
+                    <div style="background-color: #ffffff; display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; min-height: 220px;">
+                        <img src="experience/experience-1/artistic-milliners-for-KPQ.png"
+                            alt="Artistic Milliners — Engineering Internship"
+                            class="teaser-card__image"
+                            style="object-fit: contain; padding: 2rem; max-height: 180px;">
+                    </div>
                     <div class="teaser-card__body">
-                        <div class="teaser-card__number">[OWNER_EXP_1_YEARS]</div>
-                        <h3 class="teaser-card__title">[OWNER_EXP_1_ROLE] at [OWNER_EXP_1_COMPANY]</h3>
+                        <div class="teaser-card__number">Mar 2025 — Apr 2025</div>
+                        <h3 class="teaser-card__title">Engineering Intern at Artistic Milliners</h3>
                         <div class="teaser-card__tags">
-                            <span class="tag">[OWNER_E1_TAG_1]</span>
-                            <span class="tag">[OWNER_E1_TAG_2]</span>
-                            <span class="tag">[OWNER_E1_TAG_3]</span>
+                            <span class="tag">HVAC</span>
+                            <span class="tag">Boilers</span>
+                            <span class="tag">RAM Analysis</span>
                         </div>
                     </div>
                 </a>
@@ -270,13 +243,13 @@
     <footer class="footer">
         <div class="container">
             <div class="footer__name">
-                [OWNER_NAME] <span class="footer__diamond">◆</span> Portfolio
+                Muhammad Ali <span class="footer__diamond">◆</span> Portfolio
             </div>
-            <p class="footer__tagline">[OWNER_BIO_TAGLINE]</p>
+            <p class="footer__tagline">Mechanical Engineer — designing, simulating, and analysing systems from molecular scale to industrial scale.</p>
 
             <div class="footer__socials">
                 <!-- LinkedIn -->
-                <a href="[OWNER_LINKEDIN_URL]" class="footer__social-link" aria-label="LinkedIn" target="_blank"
+                <a href="https://www.linkedin.com/in/muhammad-ali-06ab962a2" class="footer__social-link" aria-label="LinkedIn" target="_blank"
                     rel="noopener">
                     <svg viewBox="0 0 24 24">
                         <path
@@ -286,7 +259,7 @@
             </div>
 
             <div class="footer__copyright">
-                © 2026 [OWNER_NAME]. All rights reserved.
+                © 2026 Muhammad Ali. All rights reserved.
 
             </div>
         </div>
@@ -301,15 +274,13 @@
     <script>
         // Initialize the scroll story on the home page
         document.addEventListener('DOMContentLoaded', function () {
-            var cardContainer = document.getElementById('homeCardContainer');
-            var card = document.getElementById('homeCard');
             var scrollWrapper = document.getElementById('scrollStory');
 
-            // Only init scroll story if elements exist and screen is wide enough
-            if (cardContainer && card && scrollWrapper && window.innerWidth >= 768) {
+            // Init scroll story — card is removed, cardContainer/card passed as null
+            if (scrollWrapper) {
                 window.AntigravityScroll.initScrollStory({
-                    cardContainer: cardContainer,
-                    card: card,
+                    cardContainer: null,
+                    card: null,
                     textSections: [
                         document.getElementById('heroText'),
                         document.getElementById('skillsText'),
@@ -320,6 +291,130 @@
                 });
             }
         });
+
+        (function() {
+            var dropContainer = document.getElementById('waterdrop-container');
+            var scrollStory = document.getElementById('scrollStory');
+
+            if (!dropContainer || !scrollStory) return;
+
+            window.addEventListener('scroll', function() {
+                var rect = scrollStory.getBoundingClientRect();
+                var total = scrollStory.offsetHeight - window.innerHeight;
+                var scrolled = -rect.top;
+                var progress = Math.max(0, Math.min(1, scrolled / total));
+
+                // Show drop only in first phase (0% to 25% scroll progress)
+                // Fade out between 25% and 35%
+                var opacity = 1;
+                if (progress > 0.25) {
+                    opacity = Math.max(0, 1 - ((progress - 0.25) / 0.10));
+                }
+
+                dropContainer.style.opacity = opacity;
+            }, { passive: true });
+        })();
+    </script>
+
+    <script type="module">
+import * as THREE from 'three';
+
+const container = document.getElementById('waterdrop-container');
+const canvas = document.getElementById('waterdrop-canvas');
+if (!container || !canvas) { console.warn('waterdrop: container not found'); }
+
+else {
+  let scene, camera, renderer, waterDrop, baseGeometry, textTexture;
+  let time = 0;
+  const clock = new THREE.Clock();
+
+  function buildTextTexture() {
+    const c = document.createElement('canvas');
+    const ctx = c.getContext('2d');
+    const pr = Math.min(window.devicePixelRatio || 1, 2);
+    const W = container.offsetWidth * pr;
+    const H = container.offsetHeight * pr;
+    c.width = W; c.height = H;
+    ctx.fillStyle = '#FFF4F0';
+    ctx.fillRect(0, 0, W, H);
+    const cx = W / 2, cy = H / 2;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillStyle = '#4A006A';
+    const dSize = Math.max(13 * pr, Math.min(W * 0.032, 40 * pr));
+    ctx.font = `500 ${dSize}px "DM Sans", sans-serif`;
+    ctx.letterSpacing = '0.12em';
+    ctx.fillText('Mechanical Engineer', cx, cy - (52 * pr));
+    const nSize = Math.max(36 * pr, Math.min(W * 0.16, 160 * pr));
+    ctx.font = `600 ${nSize}px "Cormorant Garamond", Georgia, serif`;
+    ctx.letterSpacing = '-0.02em';
+    ctx.fillText('Muhammad Ali', cx, cy + (18 * pr));
+    if (textTexture) textTexture.dispose();
+    textTexture = new THREE.CanvasTexture(c);
+    textTexture.colorSpace = THREE.SRGBColorSpace;
+    textTexture.minFilter = THREE.LinearFilter;
+    textTexture.magFilter = THREE.LinearFilter;
+    textTexture.generateMipmaps = false;
+    scene.background = textTexture;
+  }
+
+  function init() {
+    scene = new THREE.Scene();
+    camera = new THREE.PerspectiveCamera(45, 1, 0.1, 100);
+    camera.position.z = 10;
+    renderer = new THREE.WebGLRenderer({canvas, antialias:true, alpha:false, powerPreference:'high-performance'});
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setSize(container.offsetWidth, container.offsetHeight);
+    buildTextTexture();
+    renderer.outputColorSpace = THREE.SRGBColorSpace;
+    renderer.toneMapping = THREE.NoToneMapping;
+    baseGeometry = new THREE.SphereGeometry(2.4, 128, 128);
+    const mat = new THREE.MeshPhysicalMaterial({
+      color:0xffffff, transmission:1.0, ior:1.12, opacity:1.0,
+      transparent:true, roughness:0.0, metalness:0.0, thickness:1.0,
+      clearcoat:0.8, clearcoatRoughness:0.2, specularIntensity:0.5,
+      reflectivity:0.1, attenuationColor:new THREE.Color(0xffffff),
+      attenuationDistance:10.0
+    });
+    waterDrop = new THREE.Mesh(baseGeometry.clone(), mat);
+    scene.add(waterDrop);
+    scene.add(new THREE.AmbientLight(0xffffff, 2.5));
+    const d1 = new THREE.DirectionalLight(0xffffff, 1.0);
+    d1.position.set(2,5,5); scene.add(d1);
+    const d2 = new THREE.DirectionalLight(0x4A006A, 3.5);
+    d2.position.set(-5,-5,0); scene.add(d2);
+    window.addEventListener('resize', () => {
+      renderer.setSize(container.offsetWidth, container.offsetHeight);
+      buildTextTexture();
+    });
+    animate();
+  }
+
+  function animate() {
+    requestAnimationFrame(animate);
+    time += clock.getDelta();
+    const t = time * 1.75;
+    const pos = waterDrop.geometry.attributes.position;
+    const base = baseGeometry.attributes.position;
+    for (let i = 0; i < pos.count; i++) {
+      const x=base.getX(i), y=base.getY(i), z=base.getZ(i);
+      const n=Math.sin(x*1.5+t)*Math.cos(y*1.5+t*0.9)*Math.sin(z*1.5+t*1.1);
+      const s=1+0.08*n;
+      pos.setXYZ(i, x*s, y*s, z*s);
+    }
+    waterDrop.geometry.computeVertexNormals();
+    pos.needsUpdate = true;
+    waterDrop.rotation.y = t * 0.1;
+    waterDrop.rotation.z = t * 0.05;
+    renderer.render(scene, camera);
+  }
+
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(init);
+  } else {
+    window.addEventListener('load', init);
+  }
+}
     </script>
 
 </body>

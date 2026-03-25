@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mobile Banking App — [OWNER_NAME] Portfolio</title>
+    <title>Pressure Vessel Vibration Analysis — Muhammad Ali Portfolio</title>
     <meta name="description"
-        content="Case study: redesigning a mobile banking app to achieve a 4.8-star App Store rating and 40% increase in daily active users.">
+        content="Pressure vessel vibration study — modal and harmonic analysis using SolidWorks and ANSYS Mechanical.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="styles/detail.css">
 </head>
 
-<body>
+<body class="page-detail-project">
     <div class="scroll-progress-bar" aria-hidden="true"></div>
     <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="navbar__links">
@@ -41,62 +41,111 @@
         <a href="projects.html" class="detail-back">← Back to Projects</a>
         <header class="detail-header">
             <p class="detail-header__number">Project 04</p>
-            <h1 class="detail-header__title">Mobile Banking App Redesign</h1>
+            <h1 class="detail-header__title">Pressure Vessel Vibration Analysis</h1>
             <div class="detail-header__line" aria-hidden="true"></div>
             <div class="detail-header__tags">
-                <span class="tag">iOS</span><span class="tag">Android</span>
-                <span class="tag">React Native</span><span class="tag">UX Research</span>
+                <span class="tag">SolidWorks</span>
+                <span class="tag">ANSYS Mechanical</span>
+                <span class="tag">Modal Analysis</span>
+                <span class="tag">Harmonic Response</span>
+                <span class="tag">Structural Dynamics</span>
             </div>
-            <p class="detail-header__meta">Feb 2023 — May 2023</p>
+            <p class="detail-header__meta">2025</p>
         </header>
         <div class="detail-hero">
-            <img class="detail-hero__img" src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=1600&q=80"
-                alt="Mobile banking app screens on smartphones" loading="eager">
+            <img class="detail-hero__img"
+                src="projects/project-4/Screenshot_22-3-2026_21814_.jpeg"
+                alt="SolidWorks isometric assembly of horizontal pressure vessel with two saddle-plate supports"
+                loading="eager"
+                style="object-fit: contain; max-width: 100%; height: auto; display: block; margin: 0 auto; border-radius: 12px;">
         </div>
         <div class="detail-body">
             <article class="detail-prose">
                 <div class="detail-prose__section">
                     <h2 class="detail-prose__heading">Project Overview</h2>
-                    <p class="detail-prose__text">Led the end-to-end redesign of a mobile banking application for a
-                        regional bank with 850,000 customers. The project encompassed UX research, interaction design,
-                        accessibility remediation, and React Native implementation across iOS and Android.</p>
+                    <p class="detail-prose__text">This Complex Engineering Problem (CEP) involved designing a horizontal
+                        pressure vessel with two saddle-plate supports in SolidWorks, then conducting full vibration
+                        analysis in ANSYS Mechanical. The vessel operates at 15 bar design pressure with Stainless Steel
+                        316L — chosen for corrosion resistance and vibration damping properties. As the team's design
+                        and simulation lead, I built the complete 3D assembly and ran both the modal (free vibration)
+                        and harmonic response (forced vibration) simulations.</p>
                 </div>
+
+                <div class="detail-image-row">
+                    <img src="projects/project-4/Screenshot_22-3-2026_21845_.jpeg"
+                        alt="SolidWorks 3D model of pressure vessel shell body — cylindrical with hemispherical end caps"
+                        class="detail-prose__img"
+                        style="object-fit: contain; max-width: 100%; height: auto; display: block; margin: 0 auto; border-radius: 12px;">
+                    <img src="projects/project-4/Screenshot_22-3-2026_21837_.jpeg"
+                        alt="SolidWorks 3D model of saddle-plate support — 120-degree contact angle, 4.11 m length"
+                        class="detail-prose__img"
+                        style="object-fit: contain; max-width: 100%; height: auto; display: block; margin: 0 auto; border-radius: 12px;">
+                </div>
+
                 <div class="detail-prose__section">
                     <h2 class="detail-prose__heading">Challenge</h2>
-                    <p class="detail-prose__text">The existing app held a 2.9-star rating with 4,200 reviews primarily
-                        citing confusing navigation and security friction. The onboarding flow had a 68% drop-off rate.
-                        Biometric authentication was broken on 23% of Android device models.</p>
+                    <p class="detail-prose__text">Industrial pressure vessels are routinely subjected to ground and wind
+                        vibrations. The challenge was to analytically model the vessel as a 2-DOF system, manually solve
+                        for natural frequencies and mode shapes, and then verify the analytical results against ANSYS
+                        simulation. The vessel geometry — 12.13 m long, outer diameter 4.05 m, shell thickness 25.79 mm
+                        — required careful application of Barlow's formula and thin-shell assumptions to ensure
+                        R/t &gt; 10 compliance.</p>
                 </div>
+
+                <div class="detail-image-row">
+                    <img src="projects/project-4/Screenshot_22-3-2026_21925_.jpeg"
+                        alt="ANSYS modal analysis — total deformation at first natural frequency 10.717 Hz, showing mode shape of pressure vessel"
+                        class="detail-prose__img"
+                        style="object-fit: contain; max-width: 100%; height: auto; display: block; margin: 0 auto; border-radius: 12px;">
+                </div>
+
                 <div class="detail-prose__section">
                     <h2 class="detail-prose__heading">Solution</h2>
-                    <p class="detail-prose__text">Conducted 24 user interviews across three customer segments. Rebuilt
-                        navigation around a bottom tab bar with persistent account summary. Replaced the 9-step
-                        onboarding with a 4-step progressive flow. Fixed 47 biometric authentication edge cases through
-                        systematic device matrix testing.</p>
+                    <p class="detail-prose__text">The 2-DOF equations of motion were assembled using the mass and
+                        stiffness matrices of the vessel-saddle system. Eigenvalue analysis yielded analytical natural
+                        frequencies of 10.9 Hz and 19.5 Hz. In ANSYS, a modal analysis with fixed supports on the
+                        saddle bases confirmed frequencies of 10.717 Hz and 18.492 Hz — errors of 5% and 8%
+                        respectively. Harmonic response analysis was then performed using a wind-derived excitation
+                        force of 3.49 N (extracted via FFT of wind speed data), sweeping across the frequency range to
+                        map amplitude response, equivalent von Mises stress, and phase angle at each step.</p>
                 </div>
+
+                <div class="detail-image-row">
+                    <img src="projects/project-4/Screenshot_22-3-2026_21940_.jpeg"
+                        alt="ANSYS harmonic response — total deformation contour plot of pressure vessel under harmonic wind excitation"
+                        class="detail-prose__img"
+                        style="object-fit: contain; max-width: 100%; height: auto; display: block; margin: 0 auto; border-radius: 12px;">
+                    <img src="projects/project-4/Screenshot_22-3-2026_21106_.jpeg"
+                        alt="ANSYS frequency response graph — amplitude vs frequency (11.494 to 18.492 Hz) showing harmonic response behaviour"
+                        class="detail-prose__img"
+                        style="object-fit: contain; max-width: 100%; height: auto; display: block; margin: 0 auto; border-radius: 12px;">
+                </div>
+
             </article>
             <aside class="detail-meta" aria-label="Project details">
                 <div>
                     <span class="detail-meta__label">Tech Stack</span>
                     <div class="detail-meta__tags">
-                        <span class="tag">React Native</span><span class="tag">TypeScript</span>
-                        <span class="tag">Figma</span><span class="tag">Jest</span>
+                        <span class="tag">SolidWorks</span>
+                        <span class="tag">ANSYS Mechanical</span>
+                        <span class="tag">Modal Analysis</span>
+                        <span class="tag">Harmonic Response</span>
+                        <span class="tag">Structural Dynamics</span>
+                        <span class="tag">FEA</span>
                     </div>
                 </div>
                 <hr class="detail-meta__divider">
-                <div><span class="detail-meta__label">Year</span><span class="detail-meta__value">2023</span></div>
-                <div><span class="detail-meta__label">Role</span><span class="detail-meta__value">Lead UX
-                        Engineer</span></div>
+                <div><span class="detail-meta__label">Year</span><span class="detail-meta__value">2025</span></div>
+                <div><span class="detail-meta__label">Role</span><span class="detail-meta__value">Design & Simulation — SolidWorks 3D Model, ANSYS Modal & Harmonic Analysis</span></div>
+                <div><span class="detail-meta__label">Team</span><span class="detail-meta__value">Student Group Project</span></div>
             </aside>
         </div>
         <section class="detail-outcomes" aria-labelledby="outcomes-heading-4">
             <h2 class="detail-outcomes__title" id="outcomes-heading-4">Key Outcomes</h2>
             <ul class="detail-outcomes__list">
-                <li class="detail-outcomes__item">App Store rating improved from 2.9 to 4.8 stars within 8 weeks of
-                    launch</li>
-                <li class="detail-outcomes__item">Onboarding completion rate increased from 32% to 89% — a 178%
-                    improvement</li>
-                <li class="detail-outcomes__item">Daily active users grew by 40% over the following quarter</li>
+                <li class="detail-outcomes__item">ANSYS modal frequencies of 10.717 Hz and 18.492 Hz confirmed analytical solution within 5% and 8% error</li>
+                <li class="detail-outcomes__item">Harmonic response mapped across full frequency sweep — amplitude, von Mises stress, and phase angle documented at each step</li>
+                <li class="detail-outcomes__item">Vessel validated safe under wind-derived excitation — stress and deformation well within Stainless Steel 316L limits</li>
             </ul>
         </section>
         <nav class="detail-nav" aria-label="Project navigation">
@@ -106,19 +155,19 @@
     </main>
     <footer class="footer" role="contentinfo">
         <div class="footer__inner container">
-            <p class="footer__copy">© 2026 [OWNER_NAME] — Built with purpose.</p>
+            <p class="footer__copy">© 2026 Muhammad Ali — Built with purpose.</p>
             <div class="footer__social">
-                <a href="#" class="footer__social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24"
-                        fill="currentColor" width="20" height="20">
-                        <path
-                            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                    </svg></a>
-                <a href="mailto:[OWNER_EMAIL]" class="footer__social-link" aria-label="Email"><svg viewBox="0 0 24 24"
-                        fill="currentColor" width="20" height="20">
-                        <path
-                            d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z" />
-                    </svg></a>
-            </div>
+    <a href="https://www.linkedin.com/in/muhammad-ali-06ab962a2" class="footer__social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+        </svg>
+    </a>
+    <a href="mailto:mohhamadali367@gmail.com" class="footer__social-link" aria-label="Email" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+        </svg>
+    </a>
+</div>
         </div>
     </footer>
     <script src="js/navbar.js"></script>

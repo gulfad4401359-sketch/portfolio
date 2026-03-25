@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Senior Frontend Engineer at [COMPANY_1] — [OWNER_NAME] Portfolio</title>
+    <title>Engineering Intern at Artistic Milliners — Muhammad Ali Portfolio</title>
     <meta name="description"
-        content="Detail view of [OWNER_NAME]'s role as Senior Frontend Engineer — responsibilities, achievements, and technologies used.">
+        content="Detail view of Muhammad Ali's Engineering Internship at Artistic Milliners AM-4 — utilities, HVAC, boilers, power generation, and maintenance systems.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -17,8 +17,9 @@
     <link rel="stylesheet" href="styles/detail.css">
 </head>
 
-<body>
+<body class="page-detail-experience">
     <div class="scroll-progress-bar" aria-hidden="true"></div>
+
     <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="navbar__links">
             <a href="index.html" class="navbar__link">Home</a>
@@ -29,122 +30,182 @@
         <button class="navbar__hamburger" aria-label="Open menu"
             aria-expanded="false"><span></span><span></span><span></span></button>
     </nav>
+
     <div class="navbar-spacer"></div>
-    <div class="mobile-nav-overlay" role="dialog" aria-label="Mobile navigation" aria-hidden="true">
+
+    <div class="mobile-nav-overlay" aria-hidden="true">
         <button class="mobile-nav-overlay__close" aria-label="Close menu">✕</button>
-        <nav class="mobile-nav-overlay__links">
-            <a href="index.html">Home</a><a href="projects.html">Projects</a>
-            <a href="experience.html">Experience</a><a href="contact.html">Contact</a>
-        </nav>
+        <a href="index.html" class="mobile-nav-overlay__link">Home</a>
+        <a href="projects.html" class="mobile-nav-overlay__link">Projects</a>
+        <a href="experience.html" class="mobile-nav-overlay__link is-active">Experience</a>
+        <a href="contact.html" class="mobile-nav-overlay__link">Contact</a>
+        <a href="resume.html" class="mobile-nav-overlay__link">Resume</a>
     </div>
 
     <main class="container" id="main-content">
         <a href="experience.html" class="detail-back">← Back to Experience</a>
 
-        <header class="detail-header detail-header--experience">
+        <header class="detail-header detail-header--experience" style="margin-top: 2.5rem;">
             <p class="detail-header__number">Experience 01</p>
-            <h1 class="detail-header__title">Senior Frontend Engineer</h1>
+            <h1 class="detail-header__title">Engineering Intern</h1>
             <div class="detail-header__line" aria-hidden="true"></div>
             <div class="detail-header__tags">
-                <span class="tag">[COMPANY_1]</span>
-                <span class="tag">Full-Time</span>
-                <span class="tag">Remote</span>
+                <span class="tag">HVAC</span>
+                <span class="tag">Boilers</span>
+                <span class="tag">Chillers</span>
+                <span class="tag">Power Generation</span>
+                <span class="tag">RAM Analysis</span>
             </div>
-            <p class="detail-header__meta">Jan 2022 — Present · 2 years 9 months</p>
+            <p class="detail-header__meta">Mar 2025 — Apr 2025 · 4 Weeks</p>
         </header>
 
         <div class="detail-hero">
-            <img class="detail-hero__img" src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&q=80"
-                alt="Modern open-plan office workspace with monitors and collaborative spaces" loading="eager">
+            <img class="detail-hero__img"
+                src="experience/experience-1/AM.jpeg"
+                alt="Artistic Milliners facility exterior — Karachi"
+                loading="eager"
+                style="max-height: 420px; object-fit: cover;">
+        </div>
+
+        <!-- AM Logo block -->
+        <div style="background-color: #ffffff; display: flex; align-items: center; justify-content: center; padding: 1.5rem 2rem; margin-bottom: 2rem; border-radius: 8px;">
+            <img src="experience/experience-1/artistic-milliners-for-KPQ.png"
+                alt="Artistic Milliners logo"
+                style="max-height: 80px; object-fit: contain;">
         </div>
 
         <div class="detail-body">
             <article class="detail-prose">
+
                 <div class="detail-prose__section">
                     <h2 class="detail-prose__heading">Role Overview</h2>
-                    <p class="detail-prose__text">As Senior Frontend Engineer at [COMPANY_1], I lead the frontend
-                        architecture of the company's core SaaS product — a project management platform used by over
-                        80,000 teams globally. I work across the full product surface including the web application,
-                        component library, and developer experience tooling.</p>
-                    <p class="detail-prose__text">I mentor a team of four mid-level engineers, conduct weekly code
-                        reviews, drive technical roadmap planning, and collaborate daily with product designers and
-                        backend engineers to ship high-impact features.</p>
+                    <p class="detail-prose__text">As part of a group internship at Artistic Milliners Unit 4 (AM-4), one of Pakistan's largest integrated textile manufacturers, I spent four weeks embedded within the Utilities Department — the backbone of the entire facility's mechanical and electrical infrastructure. The internship provided hands-on exposure to the systems that keep a large-scale industrial plant running continuously, including power generation, steam production, cooling, and HVAC.</p>
+                    <p class="detail-prose__text">Artistic Milliners operates multiple processing units across Karachi, covering garment manufacturing, denim processing, and yarn spinning. The Utilities Department at AM-4 manages power supply, water treatment, steam generation, compressed air distribution, and environmental systems — all of which I observed and studied in operation.</p>
                 </div>
+
+                <img src="experience/experience-1/Utilities panel room.jpeg"
+                    alt="Medium Voltage utilities panel room at Artistic Milliners AM-4"
+                    class="detail-prose__img"
+                    style="width: 100%; max-height: 380px; object-fit: cover; border-radius: 8px; margin: 1.5rem 0;">
+
                 <div class="detail-prose__section">
-                    <h2 class="detail-prose__heading">What I Built</h2>
-                    <p class="detail-prose__text">Led the migration of the legacy Angular codebase to React 18 with
-                        TypeScript — a 14-month, zero-downtime transition serving 80,000 active users. Designed and
-                        built the company's internal component library used across 3 products. Introduced Storybook,
-                        automated visual regression testing with Chromatic, and reduced UI bug rate by 68%.</p>
-                    <p class="detail-prose__text">Architected a real-time notification system using WebSockets that
-                        replaced 4 polling endpoints, reducing server load by 40% and delivering sub-100ms notification
-                        latency.</p>
+                    <h2 class="detail-prose__heading">HVAC & Chiller Systems</h2>
+                    <p class="detail-prose__text">A major focus of the internship was understanding how large-scale HVAC systems are operated and maintained in an industrial textile environment. The facility uses chilled water generated by both absorption chillers and York compression chillers, which is then distributed through Air Handling Units (AHUs), Fan Coil Units (FCUs), and Fresh Air Handling Units (FAHUs) to maintain temperature and air quality across production floors.</p>
+                    <p class="detail-prose__text">I gained first-hand understanding of how absorption chillers operate without a compressor, using heat to drive the cooling cycle through a lithium bromide and water working pair. This included observing the generator, condenser, evaporator, and absorber stages, along with the associated pump systems — hot water pumps, refrigerant pumps, solution pumps, and condenser pumps — that maintain continuous flow through the cycle.</p>
                 </div>
+
+                <img src="experience/experience-1/Absorption chiller.png"
+                    alt="Absorption chiller unit at Artistic Milliners"
+                    class="detail-prose__img"
+                    style="width: 100%; max-height: 380px; object-fit: contain; border-radius: 8px; margin: 1.5rem 0;">
+
                 <div class="detail-prose__section">
-                    <h2 class="detail-prose__heading">How I Work</h2>
-                    <p class="detail-prose__text">I operate at the intersection of engineering rigour and product
-                        empathy. I write code that reads well six months later, advocate for accessibility in every
-                        feature review, and treat design systems as the shared language between design and engineering
-                        teams.</p>
+                    <h2 class="detail-prose__heading">Boilers & Steam Generation</h2>
+                    <p class="detail-prose__text">The facility's steam generation infrastructure was one of the most technically rich areas of the internship. I studied the operation of fire tube boilers used for primary steam supply, observing feed water treatment, steam pressure regulation, blowdown procedures, and safety valve operation. The plant also runs Waste Heat Recovery Boilers (WHRBs) connected directly to the gas engines, capturing exhaust heat and converting it into usable steam — improving overall energy efficiency significantly.</p>
+                    <p class="detail-prose__text">Additionally, I was exposed to a biomass boiler system that burns wood to generate heat, providing a sustainable supplementary steam source. Working through Process Flow Diagrams (PFDs) and Piping and Instrumentation Diagrams (P&IDs) for the boiler systems helped solidify my understanding of how these industrial processes are documented and monitored.</p>
                 </div>
+
+                <img src="experience/experience-1/Boiler.png"
+                    alt="Gresham Waste Heat Recovery Boiler at Artistic Milliners AM-4"
+                    class="detail-prose__img"
+                    style="width: 100%; max-height: 380px; object-fit: contain; border-radius: 8px; margin: 1.5rem 0;">
+
+                <div class="detail-prose__section">
+                    <h2 class="detail-prose__heading">Power Generation & MV Room</h2>
+                    <p class="detail-prose__text">The facility operates a Tri-Generation Power Plant — simultaneously producing electricity, heat, and cooling from a single energy source. The power house is equipped with JENBACHER gas engines which drive the on-site generation capacity, supplemented by a rooftop solar installation and grid supply from K-Electric. I studied the operational logic behind balancing these three sources to optimise cost and reliability.</p>
+                    <p class="detail-prose__text">Inside the Medium Voltage (MV) Room, I observed the switchgear, transformers, and circuit breaker panels that control power distribution across the plant. Key electrical components including vacuum circuit breakers, air circuit breakers, automatic voltage regulators, and LT synchronisation couplers were explained in the context of maintaining stable 50 Hz distribution across the facility. Safety protocols and PPE requirements in the power house were also covered.</p>
+                </div>
+
+                <img src="experience/experience-1/Gas engine.png"
+                    alt="JENBACHER gas engine at Artistic Milliners AM-4 power house"
+                    class="detail-prose__img"
+                    style="width: 100%; max-height: 380px; object-fit: contain; border-radius: 8px; margin: 1.5rem 0;">
+
+                <div class="detail-prose__section">
+                    <h2 class="detail-prose__heading">Maintenance & Reliability</h2>
+                    <p class="detail-prose__text">A dedicated portion of the internship introduced industrial maintenance methodologies as applied in a real production environment. I was exposed to Root Cause Analysis (RCA) for identifying the underlying causes of equipment failures, and Reliability Centered Maintenance (RCM) for designing maintenance strategies around the functional requirements of each system rather than time-based schedules alone.</p>
+                    <p class="detail-prose__text">The Bathtub Curve model — covering the infant mortality, useful life, and wear-out phases of equipment — was studied in the context of the plant's actual machinery lifecycle. Reliability, Availability, and Maintainability (RAM) analysis frameworks, including MTBF and MTTR calculations, were observed in use by the Utilities team for scheduling preventive maintenance and managing spare parts inventory.</p>
+                </div>
+
+                <img src="experience/experience-1/bathtub curve.jpeg"
+                    alt="The Normal Bathtub Curve — Expected Failure Rate over operating time"
+                    class="detail-prose__img"
+                    style="width: 100%; max-height: 340px; object-fit: contain; border-radius: 8px; margin: 1.5rem 0;">
+
+                <img src="experience/experience-1/maintanance and relibility.jpeg"
+                    alt="Maintenance and Reliability Optimization framework — from Reactive to Reliability-Driven"
+                    class="detail-prose__img"
+                    style="width: 100%; max-height: 300px; object-fit: contain; border-radius: 8px; margin: 1.5rem 0;">
+
+                <div class="detail-prose__section">
+                    <h2 class="detail-prose__heading">Additional Exposure</h2>
+                    <p class="detail-prose__text">Beyond the primary systems, the internship covered several other areas within the Utilities Department. I observed the denim washing and finishing systems, understanding how water is managed, treated, and recycled through the production process. Water treatment and softening plants, compressed air distribution networks, and effluent treatment processes were also part of the tour.</p>
+                    <p class="detail-prose__text">Exposure to industrial control panels, motor control centres, and plant-wide instrumentation gave a broader picture of how large facilities integrate mechanical and electrical systems under a unified operations framework. The internship reinforced how energy management — balancing gas, solar, and grid sources — directly impacts operational cost in a facility where energy constitutes a significant portion of total running expenses.</p>
+                </div>
+
             </article>
 
-            <aside class="detail-meta" aria-label="Role details">
+            <aside class="detail-meta" aria-label="Experience details">
                 <div>
-                    <span class="detail-meta__label">Core Technologies</span>
+                    <span class="detail-meta__label">Systems Covered</span>
                     <div class="detail-meta__tags">
-                        <span class="tag">React</span><span class="tag">TypeScript</span>
-                        <span class="tag">GraphQL</span><span class="tag">WebSockets</span>
-                        <span class="tag">Storybook</span>
+                        <span class="tag">HVAC</span>
+                        <span class="tag">Chillers</span>
+                        <span class="tag">Boilers</span>
+                        <span class="tag">Power Generation</span>
+                        <span class="tag">MV Room</span>
+                        <span class="tag">RAM Analysis</span>
+                        <span class="tag">Steam Systems</span>
+                        <span class="tag">Tri-Generation</span>
                     </div>
                 </div>
                 <hr class="detail-meta__divider">
-                <div><span class="detail-meta__label">Company</span><span class="detail-meta__value">[COMPANY_1]</span>
-                </div>
-                <div><span class="detail-meta__label">Type</span><span class="detail-meta__value">Full-Time ·
-                        Remote</span></div>
-                <div><span class="detail-meta__label">Duration</span><span class="detail-meta__value">Jan 2022 —
-                        Present</span></div>
+                <div><span class="detail-meta__label">Organisation</span><span class="detail-meta__value">Artistic Milliners (AM-4)</span></div>
+                <div><span class="detail-meta__label">Location</span><span class="detail-meta__value">Karachi, Pakistan</span></div>
+                <div><span class="detail-meta__label">Type</span><span class="detail-meta__value">Engineering Internship</span></div>
+                <div><span class="detail-meta__label">Duration</span><span class="detail-meta__value">Mar 2025 — Apr 2025</span></div>
                 <hr class="detail-meta__divider">
-                <a href="#" class="detail-meta__link detail-meta__link--primary">↗ Company Site</a>
+                <a href="https://www.artisticmilliners.com/" class="detail-meta__link detail-meta__link--primary" target="_blank" rel="noopener">↗ Artistic Milliners Website</a>
             </aside>
         </div>
 
         <section class="detail-outcomes" aria-labelledby="outcomes-heading-exp1">
-            <h2 class="detail-outcomes__title" id="outcomes-heading-exp1">Key Achievements</h2>
+            <h2 class="detail-outcomes__title" id="outcomes-heading-exp1">Key Takeaways</h2>
             <ul class="detail-outcomes__list">
-                <li class="detail-outcomes__item">Led zero-downtime React migration serving 80,000 teams — completed on
-                    schedule in 14 months</li>
-                <li class="detail-outcomes__item">Built company-wide component library; reduced UI bug rate by 68% and
-                    design-to-dev handoff by 55%</li>
-                <li class="detail-outcomes__item">Promoted to tech lead within 18 months; now mentoring a team of four
-                    engineers</li>
+                <li class="detail-outcomes__item">Gained practical exposure to industrial-scale HVAC, absorption chillers, and chilled water distribution systems within a large textile manufacturing facility</li>
+                <li class="detail-outcomes__item">Developed hands-on understanding of steam boiler operation, waste heat recovery systems, and tri-generation power plants including JENBACHER gas engines and MV room infrastructure</li>
+                <li class="detail-outcomes__item">Applied RAM analysis, RCA, RCM, and the Bathtub Curve model in a live industrial setting — understanding how reliability-driven maintenance strategies are implemented in continuous-process manufacturing</li>
             </ul>
         </section>
 
         <nav class="detail-nav" aria-label="Experience navigation">
             <a href="experience.html" class="detail-nav__link detail-nav__link--prev">← All Experience</a>
-            <a href="experience-2.html" class="detail-nav__link">Next Role →</a>
+            <a href="experience-2.html" class="detail-nav__link">Next Experience →</a>
         </nav>
     </main>
 
-    <footer class="footer" role="contentinfo">
-        <div class="footer__inner container">
-            <p class="footer__copy">© 2026 [OWNER_NAME] — Built with purpose.</p>
-            <div class="footer__social">
-                <a href="#" class="footer__social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24"
-                        fill="currentColor" width="20" height="20">
-                        <path
-                            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                    </svg></a>
-                <a href="mailto:[OWNER_EMAIL]" class="footer__social-link" aria-label="Email"><svg viewBox="0 0 24 24"
-                        fill="currentColor" width="20" height="20">
-                        <path
-                            d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z" />
-                    </svg></a>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__name">
+                Muhammad Ali <span class="footer__diamond">◆</span> Portfolio
             </div>
+            <p class="footer__tagline">Mechanical Engineer — designing, simulating, and analysing systems from molecular scale to industrial scale.</p>
+            <div class="footer__social">
+    <a href="https://www.linkedin.com/in/muhammad-ali-06ab962a2" class="footer__social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+        </svg>
+    </a>
+    <a href="mailto:mohhamadali367@gmail.com" class="footer__social-link" aria-label="Email" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+        </svg>
+    </a>
+</div>
+            <div class="footer__copyright">© 2026 Muhammad Ali. All rights reserved.</div>
         </div>
     </footer>
+
     <script src="js/navbar.js"></script>
     <script src="js/scroll-anim.js"></script>
 </body>

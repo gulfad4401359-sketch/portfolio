@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SaaS Onboarding Flow — [OWNER_NAME] Portfolio</title>
+    <title>URAAN — RC Aircraft Design, CFD & Propellair 2024 — Muhammad Ali Portfolio</title>
     <meta name="description"
-        content="Case study: redesigning a SaaS onboarding flow that increased trial-to-paid conversion by 52%.">
+        content="Team project: full RC aircraft designed in SolidWorks with ANSYS CFD and FEA validation. Competed at Propellair 2024 at NED University — zero crashes, first circular fuselage and winglets in competition history.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="styles/detail.css">
 </head>
 
-<body>
+<body class="page-detail-project">
     <div class="scroll-progress-bar" aria-hidden="true"></div>
     <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="navbar__links">
@@ -41,66 +41,140 @@
         <a href="projects.html" class="detail-back">← Back to Projects</a>
         <header class="detail-header">
             <p class="detail-header__number">Project 05</p>
-            <h1 class="detail-header__title">SaaS Onboarding Flow</h1>
+            <h1 class="detail-header__title">URAAN — RC Aircraft Design & Propellair 2024</h1>
             <div class="detail-header__line" aria-hidden="true"></div>
             <div class="detail-header__tags">
-                <span class="tag">Product Design</span><span class="tag">Vue.js</span>
-                <span class="tag">A/B Testing</span><span class="tag">Analytics</span>
+                <span class="tag">SolidWorks</span><span class="tag">ANSYS Fluent</span>
+                <span class="tag">CFD</span><span class="tag">Aerodynamics</span>
             </div>
-            <p class="detail-header__meta">Jun 2022 — Aug 2022</p>
         </header>
         <div class="detail-hero">
-            <img class="detail-hero__img" src="https://images.unsplash.com/photo-1512758017271-d7b84c2113f1?w=1600&q=80"
-                alt="SaaS onboarding flow screens" loading="eager">
+            <img class="detail-hero__img" src="projects/project-5/assem1.PNG"
+                alt="SolidWorks full assembly of URAAN RC aircraft — complete design with wings, fuselage, empennage and winglets" loading="eager">
         </div>
         <div class="detail-body">
             <article class="detail-prose">
                 <div class="detail-prose__section">
                     <h2 class="detail-prose__heading">Project Overview</h2>
-                    <p class="detail-prose__text">Redesigned the trial onboarding experience for a B2B project
-                        management SaaS with 14,000 trial signups per month. The goal was to reduce time-to-first-value
-                        and increase the 30-day trial-to-paid conversion rate.</p>
+                    <p class="detail-prose__text">URAAN was a team of six undergraduate Mechanical Engineering students from NED University that competed in Propellair 2024 — one of the largest annual student engineering competitions in Karachi, organised by the IMechE NED student chapter. The project involved the complete design, aerodynamic analysis, fabrication, and flight of a radio-controlled fixed-wing aircraft. As co-lead and primary designer, I was responsible for the full SolidWorks model, CFD analysis of the wing and fuselage, FEA of the wing structure, coordinating all six team members, and serving as the primary point of contact with competition judges and organisers.</p>
                 </div>
+                
+                <div class="detail-hero" style="margin-top: 2rem; text-align: center;">
+                  <img src="projects/project-5/f7a2bf00-8514-4571-9f15-362629270d2a.png"
+                       alt="Muhammad Ali at Propellair 2024 wearing URAAN team jersey"
+                       style="object-fit: contain; max-width: 100%; height: auto; display: block; margin: 0 auto; border-radius: 12px;"
+                       loading="lazy">
+                </div>
+
                 <div class="detail-prose__section">
                     <h2 class="detail-prose__heading">Challenge</h2>
-                    <p class="detail-prose__text">The existing onboarding required users to configure 11 settings before
-                        they could create their first project. 74% of users abandoned during this setup phase, never
-                        experiencing the product's core value. The average time to first meaningful action was 23
-                        minutes.</p>
+                    <p class="detail-prose__text">The core engineering challenge was designing an aircraft that could survive the full competition — multiple test flights, acrobatic manoeuvres, and payload tasks — without structural failure. At Propellair 2024, five to eight competing aircraft crashed and were completely destroyed during test or competition flights. Designing for both aerodynamic performance and structural resilience simultaneously required validated analysis before fabrication. As co-lead I also coordinated six team members across design, fabrication, and electronics procurement — ensuring every component was ready on time for competition day.</p>
                 </div>
+
+                <div class="detail-hero" style="margin-top: 2rem;">
+                  <img class="detail-hero__img"
+                       src="projects/project-5/wing%202.PNG"
+                       alt="SolidWorks internal wing structure showing spar and rib layout"
+                       loading="lazy">
+                </div>
+                
+                <div class="detail-hero" style="margin-top: 2rem;">
+                  <img class="detail-hero__img"
+                       src="projects/project-5/wing%20mesh.PNG"
+                       alt="ANSYS CFD mesh of wing cross-section in wind tunnel domain"
+                       loading="lazy">
+                </div>
+
                 <div class="detail-prose__section">
                     <h2 class="detail-prose__heading">Solution</h2>
-                    <p class="detail-prose__text">Implemented a "jobs-to-be-done" framework to identify the one action
-                        that best predicted long-term retention. Rebuilt onboarding around that single activation moment
-                        — creating a first project — achievable in under 90 seconds. All configuration moved to
-                        post-activation progressive prompts.</p>
+                    <p class="detail-prose__text">Designed the complete aircraft in SolidWorks — wing with NACA aerofoil profile, circular oval fuselage, empennage, and winglets. I specifically proposed and finalised the circular fuselage geometry based on structural reasoning — a round cross-section distributes stress more evenly and produces less parasitic drag than a rectangular section. I also proposed winglets, which reduce induced drag and suppress wingtip vortices — both novel features in the competition's five-year history. CFD analysis of the wing and fuselage was conducted in ANSYS Fluent using a wind tunnel domain, producing velocity and pressure distribution results confirming aerodynamic efficiency. FEA of the wing structure validated structural integrity under expected load conditions. The team then fabricated the aircraft using balsa wood and carbon fibre spars, with electronics selected and integrated under my coordination.</p>
+                </div>
+
+                <div class="detail-hero" style="margin-top: 2rem;">
+                  <img class="detail-hero__img"
+                       src="projects/project-5/2d%20speed%20graph.PNG"
+                       alt="ANSYS Fluent 2D velocity contour plot of wing aerofoil section"
+                       loading="lazy">
+                </div>
+                
+                <div class="detail-hero" style="margin-top: 2rem;">
+                  <img class="detail-hero__img"
+                       src="projects/project-5/3d%20speed%20graph.PNG"
+                       alt="ANSYS Fluent 3D velocity vector field around wing surface"
+                       loading="lazy">
                 </div>
             </article>
             <aside class="detail-meta" aria-label="Project details">
                 <div>
                     <span class="detail-meta__label">Tech Stack</span>
                     <div class="detail-meta__tags">
-                        <span class="tag">Vue.js</span><span class="tag">Mixpanel</span>
-                        <span class="tag">LaunchDarkly</span><span class="tag">Figma</span>
+                        <span class="tag">SolidWorks</span><span class="tag">ANSYS Fluent</span>
+                        <span class="tag">CFD</span><span class="tag">FEA</span><span class="tag">Aerodynamics</span>
                     </div>
                 </div>
                 <hr class="detail-meta__divider">
-                <div><span class="detail-meta__label">Year</span><span class="detail-meta__value">2022</span></div>
-                <div><span class="detail-meta__label">Role</span><span class="detail-meta__value">Product
-                        Designer</span></div>
+                <div><span class="detail-meta__label">Year</span><span class="detail-meta__value">2024</span></div>
+                <div><span class="detail-meta__label">Role</span><span class="detail-meta__value">Co-Lead — Design, CFD & FEA Analysis</span></div>
             </aside>
         </div>
         <section class="detail-outcomes" aria-labelledby="outcomes-heading-5">
             <h2 class="detail-outcomes__title" id="outcomes-heading-5">Key Outcomes</h2>
             <ul class="detail-outcomes__list">
-                <li class="detail-outcomes__item">Trial-to-paid conversion rate increased by 52% — from 8.3% to 12.6%
-                </li>
-                <li class="detail-outcomes__item">Time to first meaningful action reduced from 23 minutes to under 90
-                    seconds</li>
-                <li class="detail-outcomes__item">Onboarding abandonment dropped from 74% to 18% in the first 4 weeks
-                    post-launch</li>
+                <li class="detail-outcomes__item">Zero crashes throughout entire competition — the only team with a fully intact aircraft across all test and competition flights while five to eight others were destroyed</li>
+                <li class="detail-outcomes__item">First circular fuselage and winglets in five years of Propellair competition history — both proposed and finalised by me based on structural and aerodynamic reasoning</li>
+                <li class="detail-outcomes__item">Aircraft completed all competition tasks and acrobatic manoeuvres successfully — validated by pre-competition CFD and FEA analysis pipeline</li>
             </ul>
         </section>
+
+        <div class="detail-hero" style="margin-top: 2rem;">
+          <img class="detail-hero__img"
+               src="projects/project-5/IMG20240802173256.jpg"
+               alt="URAAN team in workshop laying out wing ribs during fabrication"
+               loading="lazy">
+        </div>
+        
+        <div class="detail-hero" style="margin-top: 2rem;">
+          <img class="detail-hero__img"
+               src="projects/project-5/IMG20240803165118.jpg"
+               alt="Team holding completed wing rib structure in NED workshop"
+               loading="lazy">
+        </div>
+        
+        <div class="detail-hero" style="margin-top: 2rem;">
+          <img class="detail-hero__img"
+               src="projects/project-5/IMG20240803185408.jpg"
+               alt="URAAN team with built aircraft frame on university steps"
+               loading="lazy">
+        </div>
+        
+        <div class="detail-hero" style="margin-top: 2rem; text-align: center;">
+          <img src="projects/project-5/IMG20240803190006.jpg"
+               alt="Muhammad Ali holding the completed URAAN aircraft before competition"
+               style="object-fit: contain; max-width: 100%; height: auto; display: block; margin: 0 auto; border-radius: 12px;"
+               loading="lazy">
+        </div>
+        
+        <div class="detail-hero" style="margin-top: 2rem; text-align: center;">
+          <img src="projects/project-5/Screenshot_22-3-2026_182022_www.linkedin.com.jpeg"
+               alt="URAAN team with mentor and faculty advisor at competition"
+               style="object-fit: contain; max-width: 100%; height: auto; display: block; margin: 0 auto; border-radius: 12px;"
+               loading="lazy">
+        </div>
+        
+        <div class="detail-hero" style="margin-top: 2rem;">
+          <img class="detail-hero__img"
+               src="projects/project-5/IMG20240808191519.jpg"
+               alt="URAAN aircraft on competition field at Propellair 2024"
+               loading="lazy">
+        </div>
+        
+        <div class="detail-hero" style="margin-top: 2rem;">
+          <img class="detail-hero__img"
+               src="projects/project-5/DSC_2081.JPG"
+               alt="URAAN team photo at Propellair 2024 competition day"
+               loading="lazy">
+        </div>
+
         <nav class="detail-nav" aria-label="Project navigation">
             <a href="project-4.html" class="detail-nav__link detail-nav__link--prev">← Previous Project</a>
             <a href="project-6.html" class="detail-nav__link">Next Project →</a>
@@ -108,19 +182,19 @@
     </main>
     <footer class="footer" role="contentinfo">
         <div class="footer__inner container">
-            <p class="footer__copy">© 2026 [OWNER_NAME] — Built with purpose.</p>
+            <p class="footer__copy">© 2026 Muhammad Ali — Built with purpose.</p>
             <div class="footer__social">
-                <a href="#" class="footer__social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24"
-                        fill="currentColor" width="20" height="20">
-                        <path
-                            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                    </svg></a>
-                <a href="mailto:[OWNER_EMAIL]" class="footer__social-link" aria-label="Email"><svg viewBox="0 0 24 24"
-                        fill="currentColor" width="20" height="20">
-                        <path
-                            d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z" />
-                    </svg></a>
-            </div>
+    <a href="https://www.linkedin.com/in/muhammad-ali-06ab962a2" class="footer__social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+        </svg>
+    </a>
+    <a href="mailto:mohhamadali367@gmail.com" class="footer__social-link" aria-label="Email" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+        </svg>
+    </a>
+</div>
         </div>
     </footer>
     <script src="js/navbar.js"></script>

@@ -65,7 +65,7 @@
         var currentTilt = 0;
 
         // Reference to front image for swap during flip
-        var imgFront = cardContainer.querySelector('#img-front');
+        var imgFront = cardContainer ? cardContainer.querySelector('#img-front') : null;
         var image1URL = imgFront ? imgFront.src : '';
         var image3URL = imgFront ? imgFront.getAttribute('data-swap-src') || '' : '';
 
@@ -115,7 +115,7 @@
                 }
 
                 // Swap front image when card passes 90° (back is facing user)
-                if (imgFront && image1URL && targetRot < 90) {
+                if (cardContainer && imgFront && image1URL && targetRot < 90) {
                     imgFront.src = image1URL;
                 }
             }
@@ -154,7 +154,7 @@
                 }
 
                 // Swap front image when card passes 270° (about face again)
-                if (imgFront && image3URL && targetRot > 180) {
+                if (cardContainer && imgFront && image3URL && targetRot > 180) {
                     imgFront.src = image3URL;
                 }
             }
@@ -166,11 +166,15 @@
             currentTilt = lerp(currentTilt, targetTilt, LERP_FACTOR);
 
             /* ── Update DOM — from move_and_flip.html lines 229-233 ── */
-            cardContainer.style.left = currentX + '%';
-            cardContainer.style.top = currentY + '%';
+            if (cardContainer) {
+                cardContainer.style.left = currentX + '%';
+                cardContainer.style.top = currentY + '%';
+            }
             // rotateY for flip + rotateZ for tilt — identical to source
-            card.style.transform =
-                'rotateY(' + currentRot + 'deg) rotateZ(' + currentTilt + 'deg)';
+            if (card) {
+                card.style.transform =
+                    'rotateY(' + currentRot + 'deg) rotateZ(' + currentTilt + 'deg)';
+            }
 
             requestAnimationFrame(animate);
         }

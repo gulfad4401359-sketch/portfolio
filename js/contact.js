@@ -25,55 +25,28 @@
     function handleSubmit(e) {
         e.preventDefault();
         const form = e.target;
-        let isValid = true;
-
-        // Validate Name
-        const name = form.querySelector('#contactName');
-        if (!name.value.trim()) {
-            showFieldError(name, 'Please enter your name');
-            isValid = false;
-        }
-
-        // Validate Email
-        const email = form.querySelector('#contactEmail');
-        if (!email.value.trim()) {
-            showFieldError(email, 'Please enter your email address');
-            isValid = false;
-        } else if (!isValidEmail(email.value.trim())) {
-            showFieldError(email, 'Please enter a valid email address');
-            isValid = false;
-        }
-
-        // Validate Subject
-        const subject = form.querySelector('#contactSubject');
-        if (subject && !subject.value.trim()) {
-            showFieldError(subject, 'Please enter a subject');
-            isValid = false;
-        }
-
-        // Validate Message
-        const message = form.querySelector('#contactMessage');
-        if (!message.value.trim()) {
-            showFieldError(message, 'Please enter a message');
-            isValid = false;
-        } else if (message.value.trim().length < 10) {
-            showFieldError(message, 'Message must be at least 10 characters');
-            isValid = false;
-        }
-
-        if (!isValid) return;
-
-        // Simulate form submission
-        const submitBtn = form.querySelector('.contact-form__submit');
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Sending…';
-
-        setTimeout(() => {
-            submitBtn.disabled = false;
-            submitBtn.textContent = 'Send Message →';
-            showFormMessage(form, 'success', 'Message sent successfully! I\'ll get back to you soon.');
-            form.reset();
-        }, 1500);
+        const messageDiv = form.querySelector('.contact-form__message');
+        
+        const formData = new FormData(form);
+        fetch('https://formspree.io/f/xnjoaooy', {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+        })
+        .then(response => {
+            if (response.ok) {
+                messageDiv.textContent = 'Message sent! I will get back to you soon.';
+                messageDiv.style.color = '#4A006A';
+                form.reset();
+            } else {
+                messageDiv.textContent = 'Something went wrong. Please try again.';
+                messageDiv.style.color = 'red';
+            }
+        })
+        .catch(() => {
+            messageDiv.textContent = 'Something went wrong. Please try again.';
+            messageDiv.style.color = 'red';
+        });
     }
 
     function showFieldError(field, message) {

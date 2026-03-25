@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Healthcare Patient Portal — [OWNER_NAME] Portfolio</title>
+    <title>Shell & Tube Counterflow Heat Exchanger CFD — Muhammad Ali Portfolio</title>
     <meta name="description"
-        content="Case study: designing an accessible patient portal for a regional hospital network serving 120,000 patients.">
+        content="Personal project: shell and tube counterflow heat exchanger designed in SolidWorks and analysed through ANSYS Fluent CFD simulation to study heat exchange behaviour.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="styles/detail.css">
 </head>
 
-<body>
+<body class="page-detail-project">
     <div class="scroll-progress-bar" aria-hidden="true"></div>
     <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="navbar__links">
@@ -41,65 +41,57 @@
         <a href="projects.html" class="detail-back">← Back to Projects</a>
         <header class="detail-header">
             <p class="detail-header__number">Project 06</p>
-            <h1 class="detail-header__title">Healthcare Patient Portal</h1>
+            <h1 class="detail-header__title">Shell & Tube Counterflow Heat Exchanger CFD</h1>
             <div class="detail-header__line" aria-hidden="true"></div>
             <div class="detail-header__tags">
-                <span class="tag">Accessibility</span><span class="tag">Angular</span>
-                <span class="tag">WCAG 2.1</span><span class="tag">UX Research</span>
+                <span class="tag">SolidWorks</span><span class="tag">ANSYS Fluent</span>
+                <span class="tag">CFD</span><span class="tag">Thermal Analysis</span>
             </div>
-            <p class="detail-header__meta">Mar 2022 — Jul 2022</p>
         </header>
         <div class="detail-hero">
-            <img class="detail-hero__img" src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1600&q=80"
-                alt="Healthcare patient portal interface on desktop and tablet" loading="eager">
+            <img class="detail-hero__img" src="1773835711032_Capture.PNG"
+                alt="SolidWorks 3D render of shell and tube counterflow heat exchanger" loading="eager">
         </div>
         <div class="detail-body">
             <article class="detail-prose">
                 <div class="detail-prose__section">
                     <h2 class="detail-prose__heading">Project Overview</h2>
-                    <p class="detail-prose__text">Designed and built an accessible patient portal for a regional
-                        hospital network serving 120,000 patients. The portal had to meet WCAG 2.1 AA accessibility
-                        standards, support patients aged 18–85, and integrate with existing FHIR-compliant medical
-                        record systems.</p>
+                    <p class="detail-prose__text">Designed a shell and tube counterflow heat exchanger in SolidWorks and conducted a Computational Fluid Dynamics simulation in ANSYS Fluent to study the thermal and fluid behaviour of the system. The project was completed independently in 2024 as a self-directed engineering exploration into heat transfer and CFD methodology.</p>
                 </div>
                 <div class="detail-prose__section">
                     <h2 class="detail-prose__heading">Challenge</h2>
-                    <p class="detail-prose__text">The patient population included a significant proportion of elderly
-                        users (38% over 65) and users with visual or motor impairments. The legacy portal had a System
-                        Usability Scale score of 38/100 — classified as "poor" — and phone call volumes to the
-                        appointments line remained high.</p>
+                    <p class="detail-prose__text">The core challenge was accurately modelling the counterflow configuration — where hot and cold fluids flow in opposite directions through the shell and tube arrangement — and setting up a CFD simulation that correctly captured the heat exchange between the two fluid streams. This required careful geometry modelling in SolidWorks, clean mesh generation in ANSYS, and correct boundary condition definition for both inlet and outlet flow conditions.</p>
                 </div>
                 <div class="detail-prose__section">
                     <h2 class="detail-prose__heading">Solution</h2>
-                    <p class="detail-prose__text">Ran usability studies with 18 participants across three age groups,
-                        including 6 participants with disabilities. Implemented high-contrast mode, scalable typography
-                        up to 200%, keyboard navigation throughout, and full screen reader compatibility. Reduced
-                        appointment booking steps from 8 to 3.</p>
+                    <p class="detail-prose__text">Modelled the shell and tube geometry in SolidWorks with inlet and outlet ports for both the shell-side and tube-side fluid circuits. Imported the geometry into ANSYS Fluent and generated a CFD mesh across the full assembly. Defined boundary conditions for the counterflow configuration — hot fluid entering from one end while cold fluid entered from the opposite end. Ran the simulation and analysed the results to observe temperature distribution, velocity profiles, and heat transfer behaviour across the exchanger length.</p>
                 </div>
             </article>
+            <div class="detail-hero" style="margin-top: 2rem;">
+              <img class="detail-hero__img"
+                   src="1773835711033_mesh.PNG"
+                   alt="ANSYS CFD mesh of shell and tube heat exchanger — full assembly meshed for Fluent simulation"
+                   loading="lazy">
+            </div>
             <aside class="detail-meta" aria-label="Project details">
                 <div>
                     <span class="detail-meta__label">Tech Stack</span>
                     <div class="detail-meta__tags">
-                        <span class="tag">Angular</span><span class="tag">TypeScript</span>
-                        <span class="tag">FHIR API</span><span class="tag">axe-core</span>
+                        <span class="tag">SolidWorks</span><span class="tag">ANSYS Fluent</span>
+                        <span class="tag">CFD Meshing</span><span class="tag">Thermal Analysis</span>
                     </div>
                 </div>
                 <hr class="detail-meta__divider">
-                <div><span class="detail-meta__label">Year</span><span class="detail-meta__value">2022</span></div>
-                <div><span class="detail-meta__label">Role</span><span class="detail-meta__value">Accessibility
-                        Engineer</span></div>
+                <div><span class="detail-meta__label">Year</span><span class="detail-meta__value">2024</span></div>
+                <div><span class="detail-meta__label">Role</span><span class="detail-meta__value">Individual Project — Design, Meshing & CFD Simulation</span></div>
             </aside>
         </div>
         <section class="detail-outcomes" aria-labelledby="outcomes-heading-6">
             <h2 class="detail-outcomes__title" id="outcomes-heading-6">Key Outcomes</h2>
             <ul class="detail-outcomes__list">
-                <li class="detail-outcomes__item">System Usability Scale score improved from 38 to 82 — classified as
-                    "excellent"</li>
-                <li class="detail-outcomes__item">Appointment phone call volume reduced by 44% within the first month of
-                    launch</li>
-                <li class="detail-outcomes__item">Zero WCAG 2.1 AA violations on final accessibility audit — first
-                    portal in the network to achieve this</li>
+                <li class="detail-outcomes__item">Counterflow heat exchange behaviour successfully captured through CFD simulation — temperature and velocity profiles validated across the full exchanger length</li>
+                <li class="detail-outcomes__item">Clean mesh generated across complex shell and tube geometry in ANSYS — simulation ran without convergence issues</li>
+                <li class="detail-outcomes__item">Complete design-to-simulation pipeline executed independently — SolidWorks geometry, ANSYS meshing, and Fluent CFD analysis completed end to end</li>
             </ul>
         </section>
         <nav class="detail-nav" aria-label="Project navigation">
@@ -109,19 +101,19 @@
     </main>
     <footer class="footer" role="contentinfo">
         <div class="footer__inner container">
-            <p class="footer__copy">© 2026 [OWNER_NAME] — Built with purpose.</p>
+            <p class="footer__copy">© 2026 Muhammad Ali — Built with purpose.</p>
             <div class="footer__social">
-                <a href="#" class="footer__social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24"
-                        fill="currentColor" width="20" height="20">
-                        <path
-                            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                    </svg></a>
-                <a href="mailto:[OWNER_EMAIL]" class="footer__social-link" aria-label="Email"><svg viewBox="0 0 24 24"
-                        fill="currentColor" width="20" height="20">
-                        <path
-                            d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z" />
-                    </svg></a>
-            </div>
+    <a href="https://www.linkedin.com/in/muhammad-ali-06ab962a2" class="footer__social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+        </svg>
+    </a>
+    <a href="mailto:mohhamadali367@gmail.com" class="footer__social-link" aria-label="Email" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+        </svg>
+    </a>
+</div>
         </div>
     </footer>
     <script src="js/navbar.js"></script>

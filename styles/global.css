@@ -119,6 +119,9 @@ html {
 
 body {
   background-color: var(--color-bg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center center;
   color: var(--color-text);
   font-family: var(--font-body);
   font-size: var(--text-base);
@@ -126,6 +129,28 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   animation: pageEnter 400ms var(--ease-out-expo) both;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  background-color: rgba(255, 244, 240, 0.55);
+}
+
+body.page-projects::before,
+body.page-detail-project::before {
+  background-color: rgba(255, 244, 240, 0.72);
+}
+
+body.page-contact::before,
+body.page-resume::before {
+  background-color: rgba(255, 244, 240, 0.72);
 }
 
 a {
@@ -694,4 +719,35 @@ body.page-leaving {
   .footer {
     padding: var(--space-12) 0 var(--space-6);
   }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   PER-PAGE BACKGROUND IMAGES
+═══════════════════════════════════════════════════════════════ */
+body.page-home {
+  background-image: url('../Japan Blush.png');
+}
+
+body.page-projects {
+  background-image: url('../Australia blush.png');
+}
+
+body.page-experience {
+  background-image: url('../Russia Blush.png');
+}
+
+body.page-contact {
+  background-image: url('../Slovenia blush.png');
+}
+
+body.page-resume {
+  background-image: url('../Turkey Blush.png');
+}
+
+body.page-detail-project {
+  background-image: url('../Australia blush.png');
+}
+
+body.page-detail-experience {
+  background-image: url('../Russia Blush.png');
 }
