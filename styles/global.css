@@ -542,20 +542,45 @@ body.page-leaving {
     opacity: 1;
   }
 
-  /* Force elements that animate on scroll to be visible */
+  /* General scroll animations */
   .animate-on-scroll,
   .timeline-card,
-  .timeline-entry,
-  .hero-text-section {
+  .timeline-entry {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* 1. Turn off the 400vh sticky scroll trap */
+  .scroll-story {
+    height: auto !important;
+  }
+  .sticky-viewport {
+    position: relative !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  /* 2. Force text sections to be visible and stack naturally */
+  .hero-text-section,
+  .skills-text,
+  .about-text {
     opacity: 1 !important;
     transform: none !important;
     position: relative !important;
+    top: auto !important;
+    padding: 3rem 5vw !important;
   }
 
-  /* Disable scroll story movement */
+  /* 3. Ensure the card is visible and centered in the document flow */
   #homeCardContainer {
-    left: 50% !important;
-    top: 50% !important;
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    margin: 4rem auto !important;
+    opacity: 1 !important;
+    display: flex !important;
+    justify-content: center !important;
   }
 }
 
