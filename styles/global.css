@@ -542,10 +542,14 @@ body.page-leaving {
     opacity: 1;
   }
 
-  /* Show all timeline cards immediately */
-  .timeline-card {
+  /* Force elements that animate on scroll to be visible */
+  .animate-on-scroll,
+  .timeline-card,
+  .timeline-entry,
+  .hero-text-section {
     opacity: 1 !important;
     transform: none !important;
+    position: relative !important;
   }
 
   /* Disable scroll story movement */

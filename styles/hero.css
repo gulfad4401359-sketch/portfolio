@@ -92,14 +92,6 @@
 }
 
 /* ── 5. Skills Block (Phase 1) — LEFT side ───────────────────── */
-/* CSS Fail-safe: Forces sections to become visible after 3s if JS fails */
-@keyframes heroSectionReveal {
-    to {
-        opacity: 1;
-        transform: translateY(-50%);
-    }
-}
-
 .skills-text {
     width: 50vw;
     left: 0;
@@ -108,8 +100,6 @@
     /* Hidden by default, JS controls */
     padding-left: 5vw;
     pointer-events: auto;
-    /* Ultimate fallback if JS never triggers */
-    animation: heroSectionReveal 0.6s ease-out 3s both;
 }
 
 .skills-text .section-label {
@@ -145,8 +135,6 @@
     /* Hidden by default, JS controls */
     padding-left: 5vw;
     pointer-events: auto;
-    /* Ultimate fallback if JS never triggers */
-    animation: heroSectionReveal 0.6s ease-out 3.5s both;
 }
 
 .about-text .section-label {
