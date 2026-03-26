@@ -530,9 +530,19 @@ body.page-leaving {
     transition: none !important;
   }
 
-  /* Allow card faces to fade smoothly (opacity is not motion) */
+  /* Back face: always face forward, hidden by opacity instead of backface-visibility */
+  .card-face.card-back {
+    transform: rotateY(0deg) !important;
+    backface-visibility: visible !important;
+    -webkit-backface-visibility: visible !important;
+    opacity: 0;
+  }
+
+  /* Override the blanket * transition-duration kill for card faces */
   .card-face {
-    transition: opacity 400ms ease !important;
+    transition-property: opacity !important;
+    transition-duration: 400ms !important;
+    transition-timing-function: ease !important;
   }
 
   .card-container:hover .card {
@@ -545,9 +555,6 @@ body.page-leaving {
 
   .card-container:hover .card-face.card-back {
     opacity: 1;
-    transform: rotateY(0deg) !important;
-    backface-visibility: visible !important;
-    -webkit-backface-visibility: visible !important;
   }
 
   /* General scroll animations */
