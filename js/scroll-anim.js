@@ -44,11 +44,14 @@
      * @param {HTMLElement} config.scrollWrapper - .scroll-story-wrapper
      */
     function initScrollStory(config) {
-        // Don't run on mobile (scroll story disabled per PRD §11.2)
-        if (window.innerWidth < 768) return;
-
-        // Don't run if prefers-reduced-motion
-        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        // Don't run on mobile or reduced-motion — but force sections visible first
+        if (window.innerWidth < 768 || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            var st = config.textSections && config.textSections[1];
+            var at = config.textSections && config.textSections[2];
+            if (st) { st.style.opacity = '1'; st.style.transform = 'none'; }
+            if (at) { at.style.opacity = '1'; at.style.transform = 'none'; }
+            return;
+        }
 
         var cardContainer = config.cardContainer;
         var card = config.card;
@@ -190,8 +193,17 @@
     ═════════════════════════════════════════════════════════════ */
 
     function initIntersectionAnimations() {
-        // Skip if prefers-reduced-motion
-        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        // If prefers-reduced-motion, force-show all cards immediately instead of observing
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            document.querySelectorAll('.timeline-entry .card-container').forEach(function(el) {
+                el.style.opacity = '1';
+                el.style.transform = 'none';
+            });
+            document.querySelectorAll('.animate-on-scroll').forEach(function(el) {
+                el.classList.add('is-visible');
+            });
+            return;
+        }
 
         var observerOptions = {
             root: null,
@@ -323,16 +335,40 @@
        (Scroll story is page-specific, called from index.html)
     ═════════════════════════════════════════════════════════════ */
 
+    // Universal fail-safe: after 3s, force any still-invisible elements to show
+    function forceVisibilityFailsafe() {
+        setTimeout(function() {
+            document.querySelectorAll('.timeline-entry .card-container').forEach(function(el) {
+                if (window.getComputedStyle(el).opacity === '0') {
+                    el.style.opacity = '1';
+                    el.style.transform = 'none';
+                }
+            });
+            var skillsEl = document.getElementById('skillsText');
+            var aboutEl = document.getElementById('aboutText');
+            if (skillsEl && window.getComputedStyle(skillsEl).opacity === '0') {
+                skillsEl.style.opacity = '1';
+                skillsEl.style.transform = 'translateY(-50%)';
+            }
+            if (aboutEl && window.getComputedStyle(aboutEl).opacity === '0') {
+                aboutEl.style.opacity = '1';
+                aboutEl.style.transform = 'translateY(-50%)';
+            }
+        }, 3000);
+    }
+
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', function () {
             initIntersectionAnimations();
             initStatCounters();
             initScrollProgress();
+            forceVisibilityFailsafe();
         });
     } else {
         initIntersectionAnimations();
         initStatCounters();
         initScrollProgress();
+        forceVisibilityFailsafe();
     }
 
 })();

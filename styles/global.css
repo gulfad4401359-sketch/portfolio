@@ -545,7 +545,8 @@ body.page-leaving {
   /* General scroll animations */
   .animate-on-scroll,
   .timeline-card,
-  .timeline-entry {
+  .timeline-entry,
+  .timeline-entry .card-container {
     opacity: 1 !important;
     transform: none !important;
   }
