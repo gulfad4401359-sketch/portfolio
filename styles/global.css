@@ -525,9 +525,14 @@ body.page-leaving {
     transition-duration: 0.001ms !important;
   }
 
-  /* Flatten 3D flip to opacity swap */
+  /* Flatten 3D flip to smooth opacity crossfade */
   .card {
     transition: none !important;
+  }
+
+  /* Allow card faces to fade smoothly (opacity is not motion) */
+  .card-face {
+    transition: opacity 400ms ease !important;
   }
 
   .card-container:hover .card {
