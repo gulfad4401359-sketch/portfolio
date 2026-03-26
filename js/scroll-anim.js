@@ -44,8 +44,8 @@
      * @param {HTMLElement} config.scrollWrapper - .scroll-story-wrapper
      */
     function initScrollStory(config) {
-        // Don't run on mobile or reduced-motion — but force sections visible first
-        if (window.innerWidth < 768 || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        // Don't run on mobile (scroll story disabled per PRD §11.2)
+        if (window.innerWidth < 768) {
             var st = config.textSections && config.textSections[1];
             var at = config.textSections && config.textSections[2];
             if (st) { st.style.opacity = '1'; st.style.transform = 'none'; }
