@@ -260,8 +260,8 @@
     }
 
     .timeline-card .card-container {
-        height: auto;
-        min-height: 320px;
+        height: 380px;
+        aspect-ratio: 300 / 380;
     }
 
     /* Tighter padding on card back for mobile */
