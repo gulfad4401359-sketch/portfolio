@@ -731,6 +731,23 @@ body.page-leaving {
   .footer {
     padding: var(--space-12) 0 var(--space-6);
   }
+
+  /* ── Mobile overflow prevention ── */
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  .container {
+    padding: 0 var(--space-4);
+  }
+
+  /* Detail page inline images */
+  .detail-prose__img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
 }
 
 /* ═══════════════════════════════════════════════════════════════

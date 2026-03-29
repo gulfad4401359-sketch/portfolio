@@ -260,6 +260,22 @@
     }
 
     .timeline-card .card-container {
-        height: 340px;
+        height: auto;
+        min-height: 320px;
+    }
+
+    /* Tighter padding on card back for mobile */
+    .card-back {
+        padding: var(--space-4);
+    }
+
+    /* Prevent text overflow on card backs */
+    .card-back .card-title,
+    .card-back .card-summary {
+        word-break: break-word;
+    }
+
+    .card-back .card-summary {
+        font-size: var(--text-xs);
     }
 }
