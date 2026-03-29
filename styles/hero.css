@@ -303,12 +303,7 @@
         text-align: center;
     }
 
-    .hero-text__name {
-        font-size: clamp(2rem, 10vw, 3rem);
-    }
-
     .hero-text__designation {
-        font-size: clamp(1.6rem, 8vw, 2.5rem);
         text-align: center;
     }
 
@@ -345,5 +340,12 @@
 
     .resume-cta-section {
         padding: var(--space-6) 5vw;
+    }
+
+    /* Scale down the waterdrop animation to fit mobile screen */
+    #waterdrop-container {
+        width: 280px !important;
+        height: 280px !important;
+        top: 30% !important;
     }
 }
