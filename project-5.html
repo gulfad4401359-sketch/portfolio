@@ -30,12 +30,13 @@
             aria-expanded="false"><span></span><span></span><span></span></button>
     </nav>
     <div class="navbar-spacer"></div>
-    <div class="mobile-nav-overlay" role="dialog" aria-label="Mobile navigation" aria-hidden="true">
+    <div class="mobile-nav-overlay" aria-hidden="true">
         <button class="mobile-nav-overlay__close" aria-label="Close menu">✕</button>
-        <nav class="mobile-nav-overlay__links">
-            <a href="index.html">Home</a><a href="projects.html">Projects</a>
-            <a href="experience.html">Experience</a><a href="contact.html">Contact</a>
-        </nav>
+        <a href="index.html" class="mobile-nav-overlay__link">Home</a>
+        <a href="projects.html" class="mobile-nav-overlay__link is-active">Projects</a>
+        <a href="experience.html" class="mobile-nav-overlay__link">Experience</a>
+        <a href="contact.html" class="mobile-nav-overlay__link">Contact</a>
+        <a href="resume.html" class="mobile-nav-overlay__link">Resume</a>
     </div>
     <main class="container" id="main-content">
         <a href="projects.html" class="detail-back">← Back to Projects</a>
