@@ -303,7 +303,12 @@
         text-align: center;
     }
 
+    .hero-text__name {
+        font-size: clamp(2rem, 10vw, 3rem);
+    }
+
     .hero-text__designation {
+        font-size: clamp(1.6rem, 8vw, 2.5rem);
         text-align: center;
     }
 
