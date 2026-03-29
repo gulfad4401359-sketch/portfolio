@@ -754,29 +754,29 @@ body.page-leaving {
    PER-PAGE BACKGROUND IMAGES
 ═══════════════════════════════════════════════════════════════ */
 body.page-home {
-  background-image: url('../Japan Blush.png');
+  background-image: url('../assets/bg/japan-blush.webp');
 }
 
 body.page-projects {
-  background-image: url('../Australia blush.png');
+  background-image: url('../assets/bg/australia-blush.webp');
 }
 
 body.page-experience {
-  background-image: url('../Russia Blush.png');
+  background-image: url('../assets/bg/russia-blush.webp');
 }
 
 body.page-contact {
-  background-image: url('../Slovenia blush.png');
+  background-image: url('../assets/bg/slovenia-blush.webp');
 }
 
 body.page-resume {
-  background-image: url('../Turkey Blush.png');
+  background-image: url('../assets/bg/turkey-blush.webp');
 }
 
 body.page-detail-project {
-  background-image: url('../Australia blush.png');
+  background-image: url('../assets/bg/australia-blush.webp');
 }
 
 body.page-detail-experience {
-  background-image: url('../Russia Blush.png');
+  background-image: url('../assets/bg/russia-blush.webp');
 }
