@@ -260,22 +260,61 @@
     }
 
     .timeline-card .card-container {
-        height: 380px;
-        aspect-ratio: 300 / 380;
+        height: 440px;
     }
 
-    /* Tighter padding on card back for mobile */
+    /* Reduce border-radius on mobile to prevent corner clipping */
+    .card-face {
+        border-radius: 16px;
+    }
+
+    /* Compact card back so content fits inside frame */
     .card-back {
         padding: var(--space-4);
     }
 
-    /* Prevent text overflow on card backs */
-    .card-back .card-title,
-    .card-back .card-summary {
-        word-break: break-word;
+    /* Override inline margin-top: 1.5rem on project-number */
+    .card-back .card-number,
+    .card-back .project-number {
+        font-size: 0.65rem;
+        margin-top: 0.5rem !important;
+        margin-bottom: 0.25rem !important;
     }
 
-    .card-back .card-summary {
+    .card-back .project-title {
+        font-size: var(--text-lg);
+        margin-bottom: var(--space-1);
+    }
+
+    .card-back .project-summary {
         font-size: var(--text-xs);
+        line-height: 1.5;
+        margin-top: var(--space-2);
+    }
+
+    .card-back .project-outcomes {
+        margin-top: var(--space-2);
+    }
+
+    .card-back .project-outcomes__label {
+        margin-top: var(--space-2) !important;
+        margin-bottom: var(--space-1) !important;
+    }
+
+    .card-back .project-outcome {
+        font-size: var(--text-xs);
+        line-height: 1.4;
+    }
+
+    .card-back .project-cta {
+        margin-bottom: 16px !important;
+        font-size: var(--text-sm);
+    }
+
+    .card-back .card-title,
+    .card-back .card-summary,
+    .card-back .project-title,
+    .card-back .project-summary {
+        word-break: break-word;
     }
 }
